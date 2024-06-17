@@ -14,12 +14,7 @@ p {
     color: #666666;
     text-align: center;
 }
-     body {
-            background-image: url("fondo 44.jpg");
-            background-size: cover;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
+    
         h1 {
             font-weight: bold;
             font-size: 45px;
