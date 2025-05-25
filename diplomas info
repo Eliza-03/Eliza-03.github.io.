@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algo sobre mí</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+	    background-image: url("logo 2.jpg");
+        }
+        img {
+            width: 300px;
+            height: auto;
+            margin: 10px;
+        } 
+	 h1 {
+    color: #17202a;
+    text-align: center;
+     font-weight: bold;
+     font-size: 40px;
+}
+	     h2 {
+    color: #4a235a;
+    text-align: center;
+     font-weight: bold;
+     font-size: 60px;
+}
+
+p {
+    color: #2471a3;
+    text-align: center;
+    text-align: center;
+     font-weight: bold;
+     font-size: 25px;
+}
+	    
+	
+    </style>
+</head>
+<body>
+
+    <h2>Algo sobre mí</h2>
+ <p>Hola, soy Elizabeth Calderón Hernández, la mayoría me llama Liz o Ely, soy  psicóloga especializada en terapia de pareja y sexualidad. Mi vocación es acompañarte en el camino hacia relaciones más sanas, plenas y auténticas, donde el amor, el respeto y la intimidad florezcan.</p>
+
+  
+    <h2>Mi historia y pasiones</h2>
+
+
+
+    <p>Entiendo que cada relación y cada persona es única, por eso mi enfoque se adapta a tus necesidades, sin juicios y con la calidez que mereces. Trabajo desde la empatía, la confidencialidad y la evidencia científica, porque creo que la terapia debe ser un espacio seguro para explorar, sanar y crecer.
+
+Si estás aquí, quizá sientes que algo en tu relación o en tu vida sexual necesita cambiar, o simplemente quieres fortalecer lo que ya tienen. ¡No estás solo/a! Juntos podemos trabajar en mejorar la comunicación, resolver conflictos, reavivar la conexión o abordar desafíos íntimos con naturalidad y confianza.
+
+Te invito a conocer más sobre mi forma de trabajar, mis servicios o a contactarme para una primera conversación. Estoy aquí para ayudarte</p>
+
+
+
+</body>
+</html>
+
+<marquee behavior="scroll" direction="left"><h2>&copy; Lic. Elizabeth Calderon</h2></font></marquee> 
+ <marquee behavior="scroll" direction="left"><h2>&copy; Psicologia-integral </h2></font></marquee> 
+	<marquee behavior="scroll" direction="left"><h2>&copy; 2024-2025 </h2></font></marquee> 
+
+             
+</html>
