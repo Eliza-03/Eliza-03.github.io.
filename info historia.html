@@ -4,66 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Algo sobre mí</title>
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            text-align: center;
-	    background-image: url("logo 2.jpg");
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f6f7;
+            color: #2c3e50;
+            line-height: 1.6;
         }
-        img {
-            width: 300px;
-            height: auto;
-            margin: 10px;
-        } 
-	 h1 {
-    color: #17202a;
-    text-align: center;
-     font-weight: bold;
-     font-size: 40px;
-}
-	     h2 {
-    color: #5f6a6a ;
-    text-align: center;
-     font-weight: bold;
-     font-size: 60px;
-}
 
-p {
-    color: #2471a3;
-    text-align: center;
-    text-align: center;
-     font-weight: bold;
-     font-size: 25px;
-}
-	    
-	
+        header {
+            background: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 42px;
+            color: #1a5276;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: #21618c;
+        }
+
+        p {
+            max-width: 900px;
+            margin: 0 auto 25px auto;
+            font-size: 20px;
+            color: #34495e;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #d6eaf8;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 18px;
+            color: #1b4f72;
+            font-weight: bold;
+        }
+
+        /* Botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #ffffff;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+        }
+
+        .whatsapp-float i {
+            margin-top: 15px;
+        }
+
+        .marquee-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        marquee h3 {
+            font-size: 22px;
+            color: #2471a3;
+            margin: 0;
+        }
+
     </style>
 </head>
+
 <body>
 
-    <h2>Algo sobre mí</h2>
- <p>Hola, soy Elizabeth Calderón Hernández, la mayoría me llama Liz o Ely, soy  psicóloga especializada en terapia de pareja y sexualidad. Mi vocación es acompañarte en el camino hacia relaciones más sanas, plenas y auténticas, donde el amor, el respeto y la intimidad florezcan.</p>
+<header>
+    <h1>Algo sobre mí</h1>
+</header>
 
-  
+<section>
+    <p>Hola, soy <strong>Elizabeth Calderón Hernández</strong>, aunque la mayoría me llama Liz o Ely. Soy psicóloga especializada en terapia de pareja y sexualidad. Mi vocación es acompañarte en el camino hacia relaciones más sanas, plenas y auténticas, donde el amor, el respeto y la intimidad florezcan.</p>
+</section>
+
+<section>
     <h2>Mi historia y pasiones</h2>
+    <p>Entiendo que cada relación y cada persona es única, por eso mi enfoque se adapta a tus necesidades, sin juicios y con la calidez que mereces. Trabajo desde la empatía, la confidencialidad y la evidencia científica, porque creo que la terapia debe ser un espacio seguro para explorar, sanar y crecer.</p>
 
+    <p>Si estás aquí, quizá sientes que algo en tu relación o en tu vida sexual necesita cambiar, o simplemente quieres fortalecer lo que ya tienen. ¡No estás solo/a! Juntos podemos trabajar en mejorar la comunicación, resolver conflictos, reavivar la conexión o abordar desafíos íntimos con naturalidad y confianza.</p>
 
+    <p>Te invito a conocer más sobre mi forma de trabajar, mis servicios o a contactarme para una primera conversación. Estoy aquí para ayudarte.</p>
+</section>
 
-    <p>Entiendo que cada relación y cada persona es única, por eso mi enfoque se adapta a tus necesidades, sin juicios y con la calidez que mereces. Trabajo desde la empatía, la confidencialidad y la evidencia científica, porque creo que la terapia debe ser un espacio seguro para explorar, sanar y crecer.
+<!-- WhatsApp flotante -->
+<a href="https://wa.me/5210000000000" class="whatsapp-float" target="_blank">
+    <i class="fa fa-whatsapp"></i>
+</a>
 
-Si estás aquí, quizá sientes que algo en tu relación o en tu vida sexual necesita cambiar, o simplemente quieres fortalecer lo que ya tienen. ¡No estás solo/a! Juntos podemos trabajar en mejorar la comunicación, resolver conflictos, reavivar la conexión o abordar desafíos íntimos con naturalidad y confianza.
+<!-- Importar iconos -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-Te invito a conocer más sobre mi forma de trabajar, mis servicios o a contactarme para una primera conversación. Estoy aquí para ayudarte</p>
+<!-- Marquees -->
+<div class="marquee-container">
+    <marquee behavior="scroll" direction="left"><h3>&copy; Lic. Elizabeth Calderón</h3></marquee>
+    <marquee behavior="scroll" direction="left"><h3>&copy; Psicología Integral</h3></marquee>
+    <marquee behavior="scroll" direction="left"><h3>&copy; 2024-2025</h3></marquee>
+</div>
 
-
+<footer>
+    Psicología • Bienestar emocional • Terapia de pareja
+</footer>
 
 </body>
-</html>
-
-<marquee behavior="scroll" direction="left"><h2>&copy; Lic. Elizabeth Calderon</h2></font></marquee> 
- <marquee behavior="scroll" direction="left"><h2>&copy; Psicologia-integral </h2></font></marquee> 
-	<marquee behavior="scroll" direction="left"><h2>&copy; 2024-2025 </h2></font></marquee> 
-
-             
 </html>
