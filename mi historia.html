@@ -1,92 +1,140 @@
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Historia | Inicio</title>
 
     <style>
-    body {
-          background-image: url("fondo 44-2.jpg");
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("fondo 44-2.jpg");
             background-size: cover;
-            font-family: Arial, sans-serif;
+            background-position: center;
+            background-attachment: fixed;
             text-align: center;
+            color: #f5f5f5;
         }
-	    .enlace-botón {
-  background-color: #CCCCFF;
-  border: none;
-  color: #6600FF;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: cursor 1.png;
-  border-radius: 12px;
-  }
-h1 {
-    color: #CE67F5;
-    text-align: center;
-     font-weight: bold;
-     font-size: 45px;
-}
 
-p {
-    color: #666666;
-    text-align: center;
-}
+        header {
+            padding: 40px 20px;
+            background: rgba(0,0,0,0.45);
+            box-shadow: 0px 2px 12px rgba(255,255,255,0.1);
+        }
 
-      h2 {
+        h1 {
+            font-size: 45px;
             font-weight: bold;
-            font-size: 35px;
-	      COLOR: #FFFCFC 
-        }
-        a {
-            color: purple;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .espacio {
-            margin: 20px;
-        }
-        .imagen-mediana {
-            width: 200px;
-            height: 200px;
-            border: 2px solid #000;
-            border-radius: 10px;
+            color: #d9b3ff;
+            margin: 0;
         }
 
+        h2 {
+            font-size: 26px;
+            color: #e8d6ff;
+            margin-top: 20px;
+        }
+
+        .contenedor-botones {
+            max-width: 900px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 35px;
+            padding: 0 20px;
+        }
+
+        .icono {
+            width: 150px;
+            border-radius: 14px;
+            box-shadow: 0px 0px 12px rgba(255,255,255,0.18);
+        }
+
+        .enlace-boton {
+            display: block;
+            background: rgba(90, 40, 140, 0.7);
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 18px;
+            margin-top: 12px;
+            font-weight: 600;
+            box-shadow: 0px 3px 10px rgba(255,255,255,0.15);
+            transition: 0.2s ease-in-out;
+        }
+
+        .enlace-boton:hover {
+            background: rgba(140, 90, 200, 0.9);
+            transform: translateY(-4px);
+        }
+
+        /* Marquees */
+        marquee h2 {
+            color: #d9b3ff;
+            font-size: 22px;
+            margin: 0;
+        }
+
+        footer {
+            margin-top: 50px;
+            background: rgba(0,0,0,0.5);
+            padding: 20px 0;
+            font-size: 18px;
+            color: #d6b9ff;
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 34px; }
+            .icono { width: 130px; }
+            .enlace-boton { font-size: 16px; }
+        }
     </style>
 </head>
-	<title>Mi Historia | Inicio</title>
-    <meta name="description" content="Descripción breve de mi sitio web">
 
- <marquee behavior="scroll" direction="left"> <h1>Mi Breve Historia</h1></font></marquee><br><br>
+<body>
 
-<section>
+<header>
+    <marquee behavior="scroll" direction="left">
+        <h1>Mi Breve Historia</h1>
+    </marquee>
+</header>
 
+<section class="contenedor-botones">
 
- <div style="display: flex; flex-wrap: wrap; font-size:50px;">
-<ol>
-<!-- boton algo sobre mi-->
-<br><il><img src="imagen.png" style="width: 150px;"></il><br><br><il><a href="info historia.html" class="enlace-botón">Mi Historia</a></il><br>
+    <!-- Botón Mi Historia -->
+    <div>
+        <img src="imagen.png" class="icono">
+        <a href="info historia.html" class="enlace-boton">Mi Historia</a>
+    </div>
 
- <!-- boton diplomas -->
-<br><il><img src="img_diploma.jpg" style="width: 150px;"></il><br><br><il><a href="diplomas info.html" class="enlace-botón">Fornacion</a></il><br>
+    <!-- Botón Formación -->
+    <div>
+        <img src="img_diploma.jpg" class="icono">
+        <a href="diplomas info.html" class="enlace-boton">Formación</a>
+    </div>
 
-<!-- boton contacto -->
-<br><il><img src="Sin título.png" style="width: 150px;"></il><br><br><il><a href="https://psicologaelizabethcalderon.site.agendapro.com/mx/sucursal/232546" class="enlace-botón">Citas</a></il><br>
+    <!-- Botón Citas -->
+    <div>
+        <img src="Sin título.png" class="icono">
+        <a href="https://psicologaelizabethcalderon.site.agendapro.com/mx/sucursal/232546" class="enlace-boton">Citas</a>
+    </div>
 
-	</body>
+</section>
 
+<!-- Créditos -->
+<marquee behavior="scroll" direction="left"><h2>&copy; Lic. Elizabeth Calderón</h2></marquee>
+<marquee behavior="scroll" direction="left"><h2>&copy; Psicología Integral</h2></marquee>
+<marquee behavior="scroll" direction="left"><h2>&copy; 2024-2025</h2></marquee>
 
-<marquee behavior="scroll" direction="left"><h2>&copy; Lic. Elizabeth Calderon</h2></font></marquee> 
- <marquee behavior="scroll" direction="left"><h2>&copy; Psicologia-integral </h2></font></marquee> 
-<marquee behavior="scroll" direction="left"><h2>&copy; 2024-2025 </h2></font></marquee> 
+<footer>
+    Psicología • Bienestar emocional • Desarrollo personal
+</footer>
 
-             
+</body>
 </html>
-
