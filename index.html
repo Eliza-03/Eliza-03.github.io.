@@ -10,33 +10,32 @@
             font-family: "Segoe UI", Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f4f6f7;
+            background: #000000;
+            color: #ecf0f1;
             text-align: center;
-            color: #2c3e50;
         }
 
         header {
-            background: #ffffff;
+            background: #0d0d0d;
             padding: 40px 20px;
-            box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+            box-shadow: 0px 2px 6px rgba(255,255,255,0.1);
         }
 
         h1 {
             font-size: 48px;
-            color: #7d3c98;
+            color: #bb8fe0;
             font-weight: bold;
             margin: 0;
         }
 
         h2 {
-            color: #5b2c6f;
-            font-size: 26px;
-            margin-top: 30px;
+            color: #c39bd3;
+            font-size: 22px;
+            margin-top: 20px;
         }
 
-        /* Contenedor general */
         .contenedor-botones {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 40px auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -44,44 +43,61 @@
             padding: 0 20px;
         }
 
-        /* Imagen */
         .icono {
             width: 140px;
             margin-bottom: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 12px rgba(255,255,255,0.2);
         }
 
-        /* Botones */
         .enlace-boton {
             display: block;
-            background-color: #dcd6f7;
-            color: #4a235a;
-            padding: 12px 20px;
+            background-color: #4a235a;
+            color: white;
+            padding: 14px 20px;
             border-radius: 12px;
             text-decoration: none;
             font-size: 18px;
             font-weight: bold;
-            box-shadow: 0px 3px 8px rgba(0,0,0,0.15);
-            transition: 0.2s;
+            box-shadow: 0px 3px 10px rgba(255,255,255,0.15);
+            transition: 0.2s ease;
         }
 
         .enlace-boton:hover {
-            background-color: #c4b5f5;
-            transform: translateY(-3px);
+            background-color: #7d3c98;
+            transform: translateY(-4px);
         }
 
-        /* Marquees */
-        .marquee h2 {
-            font-size: 22px;
-            color: #7d3c98;
+        /* WhatsApp flotante */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+            z-index: 100;
         }
 
         footer {
-            margin-top: 40px;
-            background: #e8daef;
+            margin-top: 50px;
+            background: #1a1a1a;
             padding: 20px 0;
+            color: #c39bd3;
             font-size: 18px;
             font-weight: bold;
-            color: #5b2c6f;
+        }
+
+        marquee h2 {
+            color: #d7bde2;
         }
     </style>
 </head>
@@ -108,12 +124,6 @@
         <a href="https://www.instagram.com/eliza670305/" class="enlace-boton">Instagram</a>
     </div>
 
-    <!-- WhatsApp -->
-    <div>
-        <img src="img_WTTS.jpeg" class="icono">
-        <a href="https://wa.link/ogwv6u" class="enlace-boton">WhatsApp</a>
-    </div>
-
     <!-- Facebook Meta -->
     <div>
         <img src="img_face.png" class="icono">
@@ -126,7 +136,7 @@
         <a href="https://drive.google.com/drive/u/1/folders/1LiUYl6NOhfqhJfcGzAW-1RDT6MEZflOn" class="enlace-boton">Libros Gratis</a>
     </div>
 
-    <!-- Venta de libros -->
+    <!-- Venta de Libros -->
     <div>
         <img src="armando.png" class="icono">
         <a href="https://www.armandoquirozadame.com/libros/" class="enlace-boton">Venta de Libros</a>
@@ -134,23 +144,17 @@
 
 </section>
 
+<!-- WhatsApp flotante -->
+<a href="https://wa.link/ogwv6u" class="whatsapp-float" target="_blank">💬</a>
+
 <!-- Marquees -->
-<div class="marquee">
-    <marquee behavior="scroll" direction="left">
-        <h2>&copy; Colaboración especial de la Lic. Elizabeth Calderón y Lic. Armando Quiroz Adame</h2>
-    </marquee>
-
-    <marquee behavior="scroll" direction="left">
-        <h2>&copy; Psicología Integral</h2>
-    </marquee>
-
-    <marquee behavior="scroll" direction="left">
-        <h2>&copy; 2024 - 2025</h2>
-    </marquee>
-</div>
+<marquee behavior="scroll" direction="left"><h2>&copy; Colaboración especial de la Lic. Elizabeth Calderón y Lic. Armando Quiroz Adame</h2></marquee>
+<marquee behavior="scroll" direction="left"><h2>&copy; Psicología Integral</h2></marquee>
+<marquee behavior="scroll" direction="left"><h2>&copy; 2024 - 2026</h2></marquee>
+<marquee behavior="scroll" direction="left"><h2>&copy; Pagina creada por Blackmoon Systems</h2></marquee>
 
 <footer>
-    Bienestar emocional • Terapia de pareja • Desarrollo personal
+    Bienestar emocional • Terapia de pareja • Profesionalismo y calidez
 </footer>
 
 </body>
