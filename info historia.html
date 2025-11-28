@@ -1,115 +1,132 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Algo sobre mí</title>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("fondo 44-2.jpg");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            text-align: center;
-            color: #f5f5f5;
-        }
+<style>
 
-        header {
-            background: rgba(0,0,0,0.45);
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0px 2px 12px rgba(255,255,255,0.1);
-        }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("fondo 44-2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        text-align: center;
+        color: #f5f5f5;
+    }
 
-        h1 {
-            font-size: 42px;
-            color: #caa6ff;
-            font-weight: 700;
-            margin: 0;
-        }
+    header {
+        background: rgba(0,0,0,0.45);
+        padding: 40px 20px;
+        text-align: center;
+        box-shadow: 0px 2px 12px rgba(255,255,255,0.1);
+    }
 
-        h2 {
-            font-size: 30px;
-            color: #d5bafc;
-            margin-top: 10px;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
+    h1 {
+        font-size: 42px;
+        color: #caa6ff;
+        font-weight: 700;
+        margin: 0;
+    }
 
-        p {
-            max-width: 900px;
-            margin: 0 auto 25px auto;
-            font-size: 20px;
-            padding: 0 20px;
-            color: #e8e8e8;
-        }
+    h2 {
+        font-size: 30px;
+        color: #d5bafc;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
 
-        section {
-            padding: 50px 20px;
-            text-align: center;
-            background: rgba(0,0,0,0.35);
-            margin: 20px;
-            border-radius: 15px;
-            box-shadow: 0px 0px 12px rgba(255,255,255,0.08);
-        }
+    p {
+        max-width: 900px;
+        margin: 0 auto 25px auto;
+        font-size: 20px;
+        padding: 0 20px;
+        color: #e8e8e8;
+    }
 
-        footer {
-            margin-top: 40px;
-            background: rgba(0,0,0,0.5);
-            padding: 20px 0;
-            text-align: center;
-            font-size: 18px;
-            color: #caa6ff;
-            font-weight: bold;
-        }
+    section {
+        padding: 50px 20px;
+        text-align: center;
+        background: rgba(0,0,0,0.35);
+        margin: 20px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 12px rgba(255,255,255,0.08);
+    }
 
-        /* WhatsApp flotante */
-        .whatsapp-float {
-            position: fixed;
-            width: 65px;
-            height: 65px;
-            bottom: 22px;
-            right: 22px;
-            background-image: url("");
-            color: #acbd69;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 34px;
-            text-decoration: none;
-            box-shadow: 2px 2px 12px rgba(0,0,0,0.5);
-            z-index: 150;
-            transition: transform 0.2s ease;
-        }
+    footer {
+        margin-top: 40px;
+        background: rgba(0,0,0,0.5);
+        padding: 20px 0;
+        text-align: center;
+        font-size: 18px;
+        color: #caa6ff;
+        font-weight: bold;
+    }
 
-        .whatsapp-float:hover {
-            transform: scale(1.12);
-        }
 
-        marquee h3 {
-            font-size: 20px;
-            color: #caa6ff;
-            margin: 0;
-        }
 
-        .marquee-container {
-            margin-top: 30px;
-        }
+    /* ------------------------- BOTÓN WHATSAPP FUNCIONAL ------------------------- */
+    .whatsapp-float {
+        position: fixed;
+        width: 65px;
+        height: 65px;
+        bottom: 22px;
+        right: 22px;
 
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            h1 { font-size: 32px; }
-            h2 { font-size: 26px; }
-            p { font-size: 18px; }
-            section { margin: 10px; padding: 30px 15px; }
-        }
-    </style>
+        /* ← ← AQUI PONES LA IMAGEN QUE QUIERAS */
+        background-image: url("logo wtts2.webp");
+        /* Ejemplo para cambiarla:
+           background-image: url("miimagen.png");
+        */
+
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        text-decoration: none;
+        box-shadow: 2px 2px 12px rgba(0,0,0,0.5);
+        z-index: 150;
+        transition: transform 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+        transform: scale(1.12);
+    }
+
+
+
+    marquee h3 {
+        font-size: 20px;
+        color: #caa6ff;
+        margin: 0;
+    }
+
+    .marquee-container {
+        margin-top: 30px;
+    }
+
+
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+        h1 { font-size: 32px; }
+        h2 { font-size: 26px; }
+        p { font-size: 18px; }
+        section { margin: 10px; padding: 30px 15px; }
+    }
+
+</style>
+
 </head>
+
+
 
 <body>
 
@@ -117,9 +134,13 @@
     <h1>Algo sobre mí</h1>
 </header>
 
+
+
 <section>
     <p>Hola, soy <strong>Elizabeth Calderón Hernández</strong>, aunque la mayoría me llama Liz o Ely. Soy psicóloga especializada en terapia de pareja y sexualidad. Mi vocación es acompañarte en el camino hacia relaciones más sanas, plenas y auténticas, donde el amor, el respeto y la intimidad florezcan.</p>
 </section>
+
+
 
 <section>
     <h2>Mi historia y pasiones</h2>
@@ -130,21 +151,28 @@
     <p>Te invito a conocer más sobre mi forma de trabajar, mis servicios o a contactarme para una primera conversación. Estoy aquí para ayudarte.</p>
 </section>
 
-<!-- WhatsApp flotante -->
-<a href="https://wa.me/5210000000000" class="whatsapp-float" target="_blank">
-    <i class="fa fa-whatsapp"></i>
-</a>
+
+
+<!-- BOTÓN DE WHATSAPP COMPLETAMENTE FUNCIONAL -->
+<a href="https://wa.me/5210000000000" class="whatsapp-float" target="_blank"></a>
+
+
 
 <!-- Iconos -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
+
+
 <!-- Marquees -->
 <div class="marquee-container">
+
     <marquee behavior="scroll" direction="left"><h3>&copy; Lic. Elizabeth Calderón 2024-2026 </h3></marquee>
     <marquee behavior="scroll" direction="left"><h3>&copy; pagina creada por Blackmoon Systems 2024-2026 </h3></marquee>
     <marquee behavior="scroll" direction="left"><h3>&copy; Psicología Integral 2024-2026 </h3></marquee>
 
 </div>
+
+
 
 <footer>
     • Psicología • Bienestar emocional • Terapia de pareja • Sexualidad • Ansiedad • Depresion •
@@ -152,3 +180,4 @@
 
 </body>
 </html>
+
