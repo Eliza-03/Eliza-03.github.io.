@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicología con Hilo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1024, #2d163d);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 50px 20px 20px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            color: #f3d9ff;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .descripcion {
+            max-width: 900px;
+            margin: auto;
+            padding: 25px;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+        }
+
+        .descripcion p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #f1f1f1;
+        }
+
+        .carousel-container {
+            width: min(95%, 1000px);
+            margin: 50px auto;
+            overflow: hidden;
+            border-radius: 24px;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            display: block;
+        }
+
+        .info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.88));
+        }
+
+        .info h3 {
+            font-size: clamp(1rem, 2vw, 1.6rem);
+            margin-bottom: 8px;
+        }
+
+        .precio {
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            color: #7dff9d;
+            font-weight: bold;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 68px;
+            height: 68px;
+            bottom: 22px;
+            right: 22px;
+            background-image: url("whatsapp.png");
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            z-index: 999;
+            box-shadow: 0 0 18px rgba(37,211,102,0.5);
+            transition: 0.3s ease;
+            animation: floaty 2.5s infinite ease-in-out;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.12);
+        }
+
+        @keyframes floaty {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0px); }
+        }
+
+        footer {
+            margin-top: 70px;
+            padding: 35px 20px;
+            background: rgba(0,0,0,0.45);
+            backdrop-filter: blur(10px);
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #d9c2ea;
+        }
+
+        @media (max-width: 768px) {
+            .descripcion {
+                width: 92%;
+                padding: 20px;
+            }
+
+            .carousel-container {
+                width: 95%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Psicología con Hilo</h1>
+    </header>
+
+    <section class="descripcion">
+        <p>
+            Aquí puedes colocar la descripción de Psicología con Hilo.
+            Este espacio está diseñado para presentar productos, creaciones,
+            mensajes especiales o cualquier contenido que quieras compartir
+            con tus visitantes.
+        </p>
+    </section>
+
+    <section class="carousel-container">
+        <div class="carousel" id="carousel">
+
+            <!-- IMAGEN 1 -->
+            <div class="slide">
+                <img src="producto1.jpg" alt="Producto 1">
+                <div class="info">
+                    <h3>Muñeco tejido artesanal</h3>
+                    <div class="precio">$350 MXN</div>
+                </div>
+            </div>
+
+            <!-- IMAGEN 2 -->
+            <div class="slide">
+                <img src="producto2.jpg" alt="Producto 2">
+                <div class="info">
+                    <h3>Figura personalizada</h3>
+                    <div class="precio">$480 MXN</div>
+                </div>
+            </div>
+
+            <!-- IMAGEN 3 -->
+            <div class="slide">
+                <img src="producto3.jpg" alt="Producto 3">
+                <div class="info">
+                    <h3>Diseño exclusivo tejido</h3>
+                    <div class="precio">$620 MXN</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <a href="https://wa.me/525619513822" class="whatsapp-float" target="_blank"></a>
+
+    <footer>
+        <strong>Psicología Inteligente</strong><br>
+        Creado por el Ing. Charly Blackmoon
+    </footer>
+
+    <script>
+        const carousel = document.getElementById("carousel");
+        const slides = document.querySelectorAll(".slide");
+        let index = 0;
+
+        function autoSlide() {
+            index++;
+            if (index >= slides.length) {
+                index = 0;
+            }
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        setInterval(autoSlide, 3500);
+    </script>
+
+</body>
+</html>
