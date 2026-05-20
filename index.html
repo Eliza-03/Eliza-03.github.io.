@@ -1,167 +1,200 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Acompañamiento Psicológico | Inicio</title>
+<!DOCTYPE html>
 
-<style>
+<html lang="es">
 
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: "Segoe UI", Arial, sans-serif;
-        background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("fondo 44-2.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        text-align: center;
-        color: #f5f5f5;
-    }
+<head>
 
-    header {
-        background: #0d0d0d;
-        padding: 40px 20px;
-        box-shadow: 0px 2px 6px rgba(255,255,255,0.1);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acompañamiento Psicológico | Inicio</title>
 
-    h1 {
-        font-size: 48px;
-        color: #bb8fe0;
-        font-weight: bold;
-        margin: 0;
-    }
+    <style>
 
-    h2 {
-        color: #c39bd3;
-        font-size: 22px;
-        margin-top: 20px;
-    }
-
-    .contenedor-botones {
-        max-width: 1000px;
-        margin: 40px auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 30px;
-        padding: 0 20px;
-    }
-
-    .icono {
-        width: 140px;
-        margin-bottom: 10px;
-        border-radius: 15px;
-        box-shadow: 0px 0px 12px rgba(255,255,255,0.2);
-    }
-
-    .enlace-boton {
-        display: block;
-        background-color: #4a235a;
-        color: white;
-        padding: 14px 20px;
-        border-radius: 12px;
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: bold;
-        box-shadow: 0px 3px 10px rgba(255,255,255,0.15);
-        transition: 0.2s ease;
-    }
-
-    .enlace-boton:hover {
-        background-color: #7d3c98;
-        transform: translateY(-4px);
-    }
-
-
-    /* ----------------------------------------------------
-       BOTÓN WHATSAPP FLOTANTE PREMIUM BLACK MOON SYSTEMS
-    ---------------------------------------------------- */
-    .whatsapp-float {
-        position: fixed;
-        width: 65px;
-        height: 65px;
-        bottom: 22px;
-        right: 22px;
-
-        /* Imagen del icono */
-        background-image: url("logo wtts2.webp");
-        background-size: cover;
-        background-position: center;
-
-        border-radius: 50%;
-        text-decoration: none;
-
-        /* Sombra flotante Black Moon */
-        box-shadow: 0px 0px 18px rgba(0,255,0,0.45);
-
-        animation: floatShadow 2.8s ease-in-out infinite;
-
-        z-index: 150;
-        transition: transform 0.2s ease;
-    }
-
-    .whatsapp-float:hover {
-        transform: scale(1.12);
-    }
-
-    @keyframes floatShadow {
-        0% {
-            box-shadow: 0px 0px 12px rgba(0,255,0,0.35);
-            transform: translateY(0px);
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("fondo 44-2.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            color: #f5f5f5;
         }
-        50% {
-            box-shadow: 0px 0px 22px rgba(0,255,0,0.55);
-            transform: translateY(-5px);
+
+        header {
+            background: #0d0d0d;
+            padding: 40px 20px;
+            box-shadow: 0px 2px 6px rgba(255,255,255,0.1);
         }
-        100% {
-            box-shadow: 0px 0px 12px rgba(0,255,0,0.35);
-            transform: translateY(0px);
+
+        h1 {
+            font-size: 48px;
+            color: #bb8fe0;
+            font-weight: bold;
+            margin: 0;
         }
-    }
+
+        h2 {
+            color: #c39bd3;
+            font-size: 22px;
+            margin-top: 20px;
+        }
+
+        .contenedor-botones {
+            max-width: 1000px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .icono {
+            width: 140px;
+            margin-bottom: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 12px rgba(255,255,255,0.2);
+        }
+
+        .enlace-boton {
+            display: block;
+            background-color: #4a235a;
+            color: white;
+            padding: 14px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0px 3px 10px rgba(255,255,255,0.15);
+            transition: 0.2s ease;
+        }
+
+        .enlace-boton:hover {
+            background-color: #7d3c98;
+            transform: translateY(-4px);
+        }
 
 
-    footer {
-        margin-top: 50px;
-        background: #1a1a1a;
-        padding: 20px 0;
-        color: #c39bd3;
-        font-size: 18px;
-        font-weight: bold;
-    }
+        /* ----------------------------------------------------
+           BOTÓN WHATSAPP FLOTANTE PREMIUM BLACK MOON SYSTEMS
+        ---------------------------------------------------- */
+        .whatsapp-float {
+            position: fixed;
+            width: 65px;
+            height: 65px;
+            bottom: 22px;
+            right: 22px;
 
-    marquee h2 {
-        color: #d7bde2;
-    }
+            /* Imagen del icono */
+            background-image: url("logo wtts2.webp");
+            background-size: cover;
+            background-position: center;
 
-</style>
+            border-radius: 50%;
+            text-decoration: none;
 
-<!-- Algo sobre mí -->
-<div>
-    <img src="imagen.png" class="icono">
-    <a href="mi historia.html" class="enlace-boton">Algo sobre mí</a>
-</div>
+            /* Sombra flotante Black Moon */
+            box-shadow: 0px 0px 18px rgba(0,255,0,0.45);
 
-<!-- Instagram -->
-<div>
-    <img src="img_insta.png" class="icono">
-    <a href="https://www.instagram.com/eliza670305/" class="enlace-boton">Instagram</a>
-</div>
+            animation: floatShadow 2.8s ease-in-out infinite;
 
-<!-- Facebook Meta -->
-<div>
-    <img src="img_face.png" class="icono">
-    <a href="https://www.facebook.com/psic.liz.calderon.2025/about_details" class="enlace-boton">Meta (Facebook)</a>
-</div>
+            z-index: 150;
+            transition: transform 0.2s ease;
+        }
 
-<!-- Libros gratis -->
-<div>
-    <img src="img_libros.jpg" class="icono">
-    <a href="https://drive.google.com/drive/u/1/folders/1LiUYl6NOhfqhJfcGzAW-1RDT6MEZflOn" class="enlace-boton">Libros Gratis</a>
-</div>
+        .whatsapp-float:hover {
+            transform: scale(1.12);
+        }
 
-<!-- Venta de Libros -->
-<div>
-    <img src="armando.png" class="icono">
-    <a href="https://www.armandoquirozadame.com/libros/" class="enlace-boton">Venta de Libros</a>
-</div>
-
+        @keyframes floatShadow {
+            0% {
+                box-shadow: 0px 0px 12px rgba(0,255,0,0.35);
+                transform: translateY(0px);
+            }
+            50% {
+                box-shadow: 0px 0px 22px rgba(0,255,0,0.55);
+                transform: translateY(-5px);
+            }
+            100% {
+                box-shadow: 0px 0px 12px rgba(0,255,0,0.35);
+                transform: translateY(0px);
+            }
+        }
 
 
-© Colaboración especial de la Lic. Elizabeth Calderón y Lic. Armando Quiroz Adame© Psicología Integral 2024 - 2026© Pagina creada por Blackmoon Systems 2024 - 2026
+        footer {
+            margin-top: 50px;
+            background: #1a1a1a;
+            padding: 20px 0;
+            color: #c39bd3;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        marquee h2 {
+            color: #d7bde2;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+    <marquee behavior="scroll" direction="left">
+        <h1>PSICOLOGÍA INTELIGENTE</h1>
+    </marquee>
+</header>
+
+<section class="contenedor-botones">
+
+    <!-- Algo sobre mí -->
+    <div>
+        <img src="imagen.png" class="icono">
+        <a href="mi historia.html" class="enlace-boton">Algo sobre mí</a>
+    </div>
+
+    <!-- Instagram -->
+    <div>
+        <img src="img_insta.png" class="icono">
+        <a href="https://www.instagram.com/eliza670305/" class="enlace-boton">Instagram</a>
+    </div>
+
+    <!-- Facebook Meta -->
+    <div>
+        <img src="img_face.png" class="icono">
+        <a href="https://www.facebook.com/psic.liz.calderon.2025/about_details" class="enlace-boton">Meta (Facebook)</a>
+    </div>
+
+    <!-- Libros gratis -->
+    <div>
+        <img src="img_libros.jpg" class="icono">
+        <a href="https://drive.google.com/drive/u/1/folders/1LiUYl6NOhfqhJfcGzAW-1RDT6MEZflOn" class="enlace-boton">Libros Gratis</a>
+    </div>
+
+    <!-- Venta de Libros -->
+    <div>
+        <img src="armando.png" class="icono">
+        <a href="https://www.armandoquirozadame.com/libros/" class="enlace-boton">Venta de Libros</a>
+    </div>
+
+</section>
+
+
+<!-- BOTÓN DE WHATSAPP FINAL - LISTO Y FUNCIONANDO -->
+<a href="https://wa.link/ogwv6u" class="whatsapp-float" target="_blank"></a>
+
+
+<!-- Marquees -->
+<marquee behavior="scroll" direction="left"><h2>&copy; Colaboración especial de la Lic. Elizabeth Calderón y Lic. Armando Quiroz Adame</h2></marquee>
+<marquee behavior="scroll" direction="left"><h2>&copy; Psicología Integral 2024 - 2026</h2></marquee>
+<marquee behavior="scroll" direction="left"><h2>&copy; Pagina creada por Blackmoon Systems 2024 - 2026</h2></marquee>
+
+<footer>
+    Bienestar emocional • Terapia de pareja • Profesionalismo y calidez
+</footer>
+
+</body>
+</html>
