@@ -1,392 +1,221 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psicología con Hilo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psicología con Hilo</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", Arial, sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, #1a1024, #2d163d);
-            color: white;
-            text-align: center;
-            min-height: 100vh;
-        }
-
-        header {
-            padding: 50px 20px 20px;
-        }
-
-        h1 {
-            font-size: clamp(2rem, 5vw, 4rem);
-            color: #f3d9ff;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-        }
-
-        .descripcion {
-            max-width: 900px;
-            margin: auto;
-            padding: 25px;
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(12px);
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-        }
-
-        .descripcion p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #f1f1f1;
-        }
-
-        .carousel-container {
-            width: min(95%, 1000px);
-            margin: 50px auto;
-            overflow: hidden;
-            border-radius: 24px;
-            position: relative;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-        }
-
-        .carousel {
-            display: flex;
-            transition: transform 0.8s ease-in-out;
-        }
-
-        .slide {
-            min-width: 100%;
-            position: relative;
-        }
-
-        .slide img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
 
-        .info {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.88));
-        }
+body {
+    background: linear-gradient(135deg, #1a1024, #2d163d);
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-        .info h3 {
-            font-size: clamp(1rem, 2vw, 1.6rem);
-            margin-bottom: 8px;
-        }
+header {
+    padding: 50px 20px 20px;
+}
 
-        .precio {
-            font-size: clamp(0.9rem, 2vw, 1.2rem);
-            color: #7dff9d;
-            font-weight: bold;
-        }
+h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: #f3d9ff;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
 
-        .whatsapp-float {
-            position: fixed;
-            width: 68px;
-            height: 68px;
-            bottom: 22px;
-            right: 22px;
-            background-image: url("img_WTTS.jpeg");
-            background-size: cover;
-            background-position: center;
-            border-radius: 50%;
-            z-index: 999;
-            box-shadow: 0 0 18px rgba(37,211,102,0.5);
-            transition: 0.3s ease;
-            animation: floaty 2.5s infinite ease-in-out;
-        }
+.descripcion {
+    width: min(95%, 900px);
+    margin: auto;
+    padding: 25px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
 
-        .whatsapp-float:hover {
-            transform: scale(1.12);
-        }
+.descripcion p {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    line-height: 1.7;
+    color: #f1f1f1;
+}
 
-        @keyframes floaty {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
-            100% { transform: translateY(0px); }
-        }
+.carousel-container {
+    width: min(95%, 900px);
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 24px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    flex-shrink: 0;
+}
 
-        footer {
-            margin-top: 70px;
-            padding: 35px 20px;
-            background: rgba(0,0,0,0.45);
-            backdrop-filter: blur(10px);
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #d9c2ea;
-        }
+.carousel {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+}
 
-        @media (max-width: 768px) {
-            .descripcion {
-                width: 92%;
-                padding: 20px;
-            }
+.slide {
+    min-width: 100%;
+    position: relative;
+}
 
-            .carousel-container {
-                width: 65%;
-            }
-        }
+.slide img {
+    width: 100%;
+    height: clamp(300px, 60vw, 550px);
+    object-fit: cover;
+    display: block;
+}
 
-    </style>
+.info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.88));
+}
+
+.info h3 {
+    font-size: clamp(1rem, 2vw, 1.6rem);
+    margin-bottom: 8px;
+}
+
+.precio {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    color: #7dff9d;
+    font-weight: bold;
+}
+
+/* Flechas */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.45);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    backdrop-filter: blur(6px);
+    transition: 0.3s;
+}
+
+.arrow:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+.whatsapp-float {
+    position: fixed;
+    width: 68px;
+    height: 68px;
+    bottom: 22px;
+    right: 22px;
+    background-image: url("img_WTTS.jpeg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    z-index: 999;
+    box-shadow: 0 0 18px rgba(37,211,102,0.5);
+    transition: 0.3s ease;
+    animation: floaty 2.5s infinite ease-in-out;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.12);
+}
+
+@keyframes floaty {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+}
+
+footer {
+    margin-top: auto;
+    width: 100%;
+    padding: 25px 20px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(10px);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #d9c2ea;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-container {
+        width: 95%;
+    }
+
+    .slide img {
+        height: 400px;
+    }
+
+    .arrow {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide img {
+        height: 320px;
+    }
+
+    .info {
+        padding: 12px;
+    }
+
+    .arrow {
+        width: 40px;
+        height: 40px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Psicología con Hilo</h1>
-    </header>
+<header>
+    <h1>Psicología con Hilo</h1>
+</header>
 
-    <section class="descripcion">
-        <p>
-            Aquí puedes colocar la descripción de Psicología con Hilo.
-            Este espacio está diseñado para presentar productos, creaciones,
-            mensajes especiales o cualquier contenido que quieras compartir
-            con tus visitantes.
-        </p>
-    </section>
+<section class="descripcion">
+    <p>
+        Aquí puedes colocar la descripción de Psicología con Hilo.
+        Este espacio está diseñado para presentar productos, creaciones,
+        mensajes especiales o cualquier contenido que quieras compartir
+        con tus visitantes.
+    </p>
+</section>
 
-    <section class="carousel-container">
-        <div class="carousel" id="carousel">
-<!-- IMAGEN 0 -->
-            <div class="slide">
-                <img src="am_0.png" alt="Producto 0">
-                <div class="info">
-                    <h3>pide tu personaje personalizado</h3>
-                    <div class="precio">varios precios </div>
-                </div>
-            </div>
-<!-- IMAGEN 1 -->
-            <div class="slide">
-                <img src="am_1.png" alt="Producto 1">
-                <div class="info">
-                    <h3>Abeja tejida artesanal</h3>
-                    <div class="precio">$100 MXN</div>
-                </div>
-            </div>
+<section class="carousel-container">
+    <button class="arrow prev" onclick="prevSlide()">❮</button>
+    <button class="arrow next" onclick="nextSlide()">❯</button>
 
- <!-- IMAGEN 2 -->
-            <div class="slide">
-                <img src="am_2.png" alt="Producto 2">
-                <div class="info">
-                    <h3>mantel navideño</h3>
-                    <div class="precio">$150 MXN</div>
-                </div>
-            </div>
+    <div class="carousel" id="carousel">
 
- <!-- IMAGEN 3 -->
-            <div class="slide">
-                <img src="am_3.png" alt="Producto 3">
-                <div class="info">
-                    <h3>almohada</h3>
-                    <div class="precio">$100 MXN</div>
-                </div>
-            </div>
-            
-  <!-- IMAGEN 4 -->
-            <div class="slide">
-                <img src="am_4.png" alt="Producto 4">
-                <div class="info">
-                    <h3>Jeringa personalizada</h3>
-                    <div class="precio">$50 MXN</div>
-                </div>
-            </div>
-            
-<!-- IMAGEN 5 -->
-            <div class="slide">
-                <img src="am_5.png" alt="Producto 5">
-                <div class="info">
-                    <h3>Figura personalizada</h3>
-                    <div class="precio">$100 MXN</div>
-                </div>
-            </div>
-              <!-- IMAGEN 6 -->
-            <div class="slide">
-                <img src="am_6.png" alt="Producto 6">
-                <div class="info">
-                    <h3>Figura personalizada</h3>
-                    <div class="precio">$70 MXN</div>
-                </div>
-            </div>
-              <!-- IMAGEN 7 -->
-            <div class="slide">
-                <img src="am_7.png" alt="Producto 7">
-                <div class="info">
-                    <h3>Figura pebles</h3>
-                    <div class="precio">$}100 MXN</div>
-                </div>
-            </div>
-              <!-- IMAGEN 8-->
-            <div class="slide">
-                <img src="am_8.png" alt="Producto 8">
-                <div class="info">
-                    <h3>Figura sirena </h3>
-                    <div class="precio">$500 MXN</div>
-                </div>
-            </div>
-              <!-- IMAGEN 9 -->
-            <div class="slide">
-                <img src="am_9.png" alt="Producto 9">
-                <div class="info">
-                    <h3>Figura patito</h3>
-                    <div class="precio">$70 MXN</div>
-                </div>
-            </div>
-              <!-- IMAGEN 10 -->
-            <div class="slide">
-                <img src="am_10.png" alt="Producto 10">
-                <div class="info">
-                    <h3>Figura cactus</h3>
-                    <div class="precio">$600 MXN</div>
-                </div>
-            </div>
-              <!-- IMAGEN 11 -->
-            <div class="slide">
-                <img src="am_11.png" alt="Producto 11">
-                <div class="info">
-                    <h3>Figura stich</h3>
-                    <div class="precio">$600 MXN</div>
-                </div>
-            </div>
-              <!-- IMAGEN 12 -->
-            <div class="slide">
-                <img src="am_12.png" alt="Producto 12">
-                <div class="info">
-                    <h3>Figura pato donald</h3>
-                    <div class="precio">$500 MXN</div>
-                </div>
-            </div>
-              <!-- IMAGEN 13 -->
-            <div class="slide">
-                <img src="am_13.png" alt="Producto 13">
-                <div class="info">
-                    <h3>Figura sol</h3>
-                    <div class="precio">$70 MXN</div>
-                </div>
-            </div>
-              <!-- IMAGEN 14 -->
-            <div class="slide">
-                <img src="am_14.png" alt="Producto 14">
-                <div class="info">
-                    <h3>Figuras dinosaurios </h3>
-                    <div class="precio">$400 MXN</div>
-                </div>
-            </div>
-              <!-- IMAGEN 15 -->
-            <div class="slide">
-                <img src="am_15.png" alt="Producto 15">
-                <div class="info">
-                    <h3>Figura princesa</h3>
-                    <div class="precio">$800 MXN</div>
-                </div>
-            </div>
-             <!-- IMAGEN 16 -->
-            <div class="slide">
-                <img src="am_16.png" alt="Producto 16">
-                <div class="info">
-                    <h3>Figura caballito</h3>
-                    <div class="precio">$70 MXN</div>
-                </div>
-            </div>
-             <!-- IMAGEN 17 -->
-            <div class="slide">
-                <img src="am_17.png" alt="Producto 17">
-                <div class="info">
-                    <h3>Figura gato y corazon</h3>
-                    <div class="precio">$70 MXN</div>
-                </div>
-            </div>
-             <!-- IMAGEN 18 -->
-            <div class="slide">
-                <img src="am_18.png" alt="Producto 18">
-                <div class="info">
-                    <h3>Figura pan </h3>
-                    <div class="precio">$70 MXN</div>
-                </div>
-            </div>
-             <!-- IMAGEN 19 -->
-            <div class="slide">
-                <img src="am_19.png" alt="Producto 19">
-                <div class="info">
-                    <h3>Figura bailarina ballet</h3>
-                    <div class="precio">$600 MXN</div>
-                </div>
-            </div>
-             <!-- IMAGEN 20 -->
-            <div class="slide">
-                <img src="am_20.png" alt="Producto 20">
-                <div class="info">
-                    <h3>Figura pollito</h3>
-                    <div class="precio">$70 MXN</div>
-                </div>
-            </div>
-             <!-- IMAGEN 21 -->
-            <div class="slide">
-                <img src="am_21.png" alt="Producto 21">
-                <div class="info">
-                    <h3>Figura rana rene</h3>
-                    <div class="precio">$600 MXN</div>
-                </div>
-            </div>
-             <!-- IMAGEN 22 -->
-            <div class="slide">
-                <img src="am_22.png" alt="Producto 22">
-                <div class="info">
-                    <h3>Figura tlacuache</h3>
-                    <div class="precio">$500 MXN</div>
-                </div>
-            </div>
-             <!-- IMAGEN 23-->
-            <div class="slide">
-                <img src="am_23.png" alt="Producto 23">
-                <div class="info">
-                    <h3>Figura tortugas </h3>
-                    <div class="precio">$100 MXN</div>
-                </div>
-            </div>
-             <!-- IMAGEN 24-->
-            <div class="slide">
-                <img src="am_24.png" alt="Producto 24">
-                <div class="info">
-                    <h3>Figura unicornio</h3>
-                    <div class="precio">$600 MXN</div>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <a href="https://wa.me/525619513822" class="whatsapp-float" target="_blank"></a>
-
-    <footer>
-        <strong>Psicología Inteligente</strong><br>
-        Creado por el Ing. Charly Blackmoon
-    </footer>
-
-    <script>
-        const carousel = document.getElementById("carousel");
-        const slides = document.querySelectorAll(".slide");
-        let index = 0;
-
-        function autoSlide() {
-            index++;
-            if (index >= slides.length) {
-                index = 0;
-            }
-            carousel.style.transform = `translateX(-${index * 100}%)`;
-        }
-
-        setInterval(autoSlide, 3500);
-    </script>
-
-</body>
-</html>
+        <!-- PEGA AQUÍ TODOS TUS SLIDES EXACTAMENTE COMO LOS TIENES -->
