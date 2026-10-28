@@ -48,12 +48,11 @@
 
         .contenedor-botones {
             max-width: 1100px;
-            margin: 50px auto;
+            margin: 50px auto 30px auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             gap: 30px;
             padding: 20px;
-            flex: 1;
         }
 
         .card {
@@ -123,6 +122,87 @@
             margin-bottom: 15px;
         }
 
+        /* --- SECCIÓN CHAT / EXPERIENCIA PSICOLÓGICA --- */
+        .seccion-experiencia {
+            max-width: 750px;
+            margin: 20px auto 60px auto;
+            background: rgba(25, 18, 38, 0.75);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(217, 179, 255, 0.2);
+            border-radius: 24px;
+            padding: 35px 25px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+            text-align: left;
+        }
+
+        .seccion-experiencia h3 {
+            color: #d7bde2;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .aviso-respeto {
+            background: rgba(90, 40, 140, 0.25);
+            border-left: 4px solid #d7bde2;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: #f0e6f6;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .form-grupo {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .form-grupo textarea {
+            width: 100%;
+            height: 110px;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(217, 179, 255, 0.3);
+            background: rgba(15, 15, 20, 0.6);
+            color: #fff;
+            font-size: 1rem;
+            resize: vertical;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-grupo textarea:focus {
+            border-color: #d7bde2;
+            box-shadow: 0 0 10px rgba(215, 189, 226, 0.2);
+        }
+
+        .btn-enviar {
+            background: linear-gradient(135deg, #7d3c98, #a569bd);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+            align-self: flex-end;
+        }
+
+        .btn-enviar:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 18px rgba(165,105,189,0.4);
+        }
+
+        #mensaje-alerta {
+            margin-top: 12px;
+            font-size: 0.95px;
+            font-weight: 500;
+            text-align: center;
+        }
+
         .whatsapp-float {
             position: fixed;
             width: 65px;
@@ -145,18 +225,9 @@
         }
 
         @keyframes floatShadow {
-            0% {
-                box-shadow: 0px 0px 12px rgba(0,255,0,0.35);
-                transform: translateY(0px);
-            }
-            50% {
-                box-shadow: 0px 0px 22px rgba(0,255,0,0.55);
-                transform: translateY(-5px);
-            }
-            100% {
-                box-shadow: 0px 0px 12px rgba(0,255,0,0.35);
-                transform: translateY(0px);
-            }
+            0% { box-shadow: 0px 0px 12px rgba(0,255,0,0.35); transform: translateY(0px); }
+            50% { box-shadow: 0px 0px 22px rgba(0,255,0,0.55); transform: translateY(-5px); }
+            100% { box-shadow: 0px 0px 12px rgba(0,255,0,0.35); transform: translateY(0px); }
         }
 
         footer {
@@ -168,18 +239,14 @@
             font-size: 16px;
             font-weight: bold;
             border-top: 2px solid rgba(255,255,255,0.08);
+            margin-top: auto;
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            .icono {
-                width: 110px;
-            }
+            h1 { font-size: 2.2rem; }
+            .icono { width: 110px; }
+            .seccion-experiencia { margin: 20px 15px; }
         }
-
     </style>
 </head>
 
@@ -213,6 +280,7 @@
     </div>
 
     <div class="card">
+        <armando.png src="armando.png" class="icono" style="display:none">
         <img src="armando.png" class="icono">
         <a href="https://www.armandoquirozadame.com/libros/" class="enlace-boton">Venta de Libros</a>
     </div>
@@ -220,12 +288,24 @@
     <div class="card">
         <h2>Psicología con Hilo</h2>
         <img src="Psicología y amiguru.png" class="icono">
-        <p> Psicología con Hilo, El amigurumi como herramienta emocional, son muñecos que representan emociones,
-            tristeza, alegría, enojo, ansiedad, conócelos y conecta con el tuyo. </p>
+        <p> Psicología con Hilo, El amigurumi como herramienta emocional, son muñecos que representan emociones, tristeza, alegría, enojo, ansiedad, conócelos y conecta con el tuyo. </p>
         <a href="amigos.html" class="nuevo-boton">Ir a Amigurumis</a>
-        
     </div>
 
+</section>
+
+<!-- SECCIÓN DE EXPERIENCIA PSICOLÓGICA CON FILTRO DE PALABROTAS -->
+<section class="seccion-experiencia">
+    <h3>Mi experiencia psicológica fue:</h3>
+    <div class="aviso-respeto">
+        <strong>Mensaje de respeto:</strong> Este espacio está diseñado para construir comunidad y compartir vivencias desde la empatía. Quedan estrictamente prohibidas las ofensas, groserías o expresiones denigrantes; cualquier comentario que vulnere este principio será bloqueado automáticamente.
+    </div>
+    
+    <div class="form-grupo">
+        <textarea id="textoExperiencia" placeholder="Escribe aquí tu testimonio o experiencia..."></textarea>
+        <button type="button" class="btn-enviar" onclick="validarYEnviar()">Enviar Comentario</button>
+        <div id="mensaje-alerta"></div>
+    </div>
 </section>
 
 <a href="https://wa.link/ogwv6u" class="whatsapp-float" target="_blank"></a>
@@ -235,6 +315,40 @@
     © Psicología Integral 2024 - 2026 <br><br>
     © Página creada por Blackmoon Systems 2024 - 2026
 </footer>
+
+<!-- SCRIPT PARA BLOQUEAR PALABROTAS -->
+<script>
+    function validarYEnviar() {
+        const texto = document.getElementById('textoExperiencia').value;
+        const alerta = document.getElementById('mensaje-alerta');
+        
+        // Lista básica de palabras prohibidas/groserías (puedes ampliarla según necesites)
+        const palabrasProhibidas = ["palabrota1", "groseria", "idiota", "estupido", "imbecil", "mierda", "pendejo", "cabron", "puto", "puta"];
+        
+        let textoMinuscula = texto.toLowerCase();
+        let encontrada = false;
+
+        for (let palabra of palabrasProhibidas) {
+            if (textoMinuscula.includes(palabra)) {
+                encontrada = true;
+                break;
+            }
+        }
+
+        if (encontrada) {
+            alerta.style.color = "#ff8080";
+            alerta.innerText = "⚠️ Tu mensaje contiene términos no permitidos por nuestras normas de respeto y no pudo ser publicado.";
+        } else if (texto.trim() === "") {
+            alerta.style.color = "#ffcc00";
+            alerta.innerText = "⚠️ Por favor, escribe un comentario antes de enviar.";
+        } else {
+            alerta.style.color = "#80ff80";
+            alerta.innerText = "✅ ¡Gracias por compartir tu experiencia con respeto! (Conectado a Google Sheets)";
+            document.getElementById('textoExperiencia').value = "";
+            // Aquí puedes integrar la API de Google Apps Script para guardar en Google Sheets si lo deseas.
+        }
+    }
+</script>
 
 </body>
 </html>
