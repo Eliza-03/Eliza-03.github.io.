@@ -150,21 +150,33 @@
             gap: 12px;
         }
 
+        .form-grupo label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: -4px;
+        }
+
+        .form-grupo input,
         .form-grupo textarea {
             width: 100%;
-            height: 110px;
-            padding: 15px;
+            padding: 14px;
             border-radius: 12px;
             border: 1px solid var(--card-border);
             background: rgba(15, 15, 20, 0.6);
             color: var(--text-main);
             font-size: 15px;
-            resize: vertical;
             outline: none;
             box-sizing: border-box;
             transition: border-color 0.3s;
         }
 
+        .form-grupo textarea {
+            height: 110px;
+            resize: vertical;
+        }
+
+        .form-grupo input:focus,
         .form-grupo textarea:focus {
             border-color: var(--primary-color);
             box-shadow: 0 0 10px var(--accent-glow);
@@ -181,6 +193,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             align-self: flex-end;
+            margin-top: 5px;
         }
 
         .btn-enviar:hover {
@@ -288,7 +301,7 @@
 
     </div>
 
-    <!-- SECCIÓN DE EXPERIENCIA PSICOLÓGICA (CONECTADA A GOOGLE SHEETS) -->
+    <!-- SECCIÓN DE EXPERIENCIA PSICOLÓGICA CON CAMPO DE NOMBRE -->
     <section class="seccion-experiencia">
         <h3>Mi experiencia psicológica fue:</h3>
         <div class="aviso-respeto">
@@ -296,7 +309,12 @@
         </div>
         
         <div class="form-grupo">
+            <label for="nombreUsuario">Tu Nombre:</label>
+            <input type="text" id="nombreUsuario" placeholder="Escribe tu nombre o anónimo...">
+
+            <label for="textoExperiencia">Tu Experiencia:</label>
             <textarea id="textoExperiencia" placeholder="Escribe aquí tu testimonio o experiencia..."></textarea>
+
             <button type="button" class="btn-enviar" onclick="validarYEnviar()">Enviar Comentario</button>
             <div id="mensaje-alerta"></div>
         </div>
@@ -311,20 +329,21 @@
 <!-- Botón de WhatsApp -->
 <a href="https://wa.me/5210000000000" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contacto por WhatsApp"></a>
 
-<!-- SCRIPT DE VALIDACIÓN, FILTRADO DE PALABROTAS Y GOOGLE SHEETS -->
+<!-- SCRIPT DE VALIDACIÓN Y ENVÍO A GOOGLE SHEETS -->
 <script>
     function validarYEnviar() {
-        const texto = document.getElementById('textoExperiencia').value;
+        const nombre = document.getElementById('nombreUsuario').value.trim();
+        const texto = document.getElementById('textoExperiencia').value.trim();
         const alerta = document.getElementById('mensaje-alerta');
         
         // Lista básica de palabras prohibidas para bloquear groserías automáticamente
         const palabrasProhibidas = ["groseria", "idiota", "estupido", "imbecil", "mierda", "pendejo", "cabron", "puto", "puta"];
         
-        let textoMinuscula = texto.toLowerCase();
+        let textoCompleto = (nombre + " " + texto).toLowerCase();
         let encontrada = false;
 
         for (let palabra of palabrasProhibidas) {
-            if (textoMinuscula.includes(palabra)) {
+            if (textoCompleto.includes(palabra)) {
                 encontrada = true;
                 break;
             }
@@ -333,9 +352,9 @@
         if (encontrada) {
             alerta.style.color = "#ff8080";
             alerta.innerText = "⚠️ Tu mensaje contiene términos no permitidos por nuestras normas de respeto y no pudo ser publicado.";
-        } else if (texto.trim() === "") {
+        } else if (nombre === "" || texto === "") {
             alerta.style.color = "#ffcc00";
-            alerta.innerText = "⚠️ Por favor, escribe un comentario antes de enviar.";
+            alerta.innerText = "⚠️ Por favor, completa tu nombre y tu comentario antes de enviar.";
         } else {
             alerta.style.color = "#d9b3ff";
             alerta.innerText = "⏳ Enviando y guardando experiencia...";
@@ -347,11 +366,12 @@
                 method: "POST",
                 mode: "no-cors",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ comentario: texto })
+                body: JSON.stringify({ nombre: nombre, comentario: texto })
             })
             .then(() => {
                 alerta.style.color = "#80ff80";
                 alerta.innerText = "✅ ¡Gracias por compartir tu experiencia con respeto! Registrada con éxito.";
+                document.getElementById('nombreUsuario').value = "";
                 document.getElementById('textoExperiencia').value = "";
             })
             .catch(() => {
