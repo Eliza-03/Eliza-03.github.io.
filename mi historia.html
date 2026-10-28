@@ -210,6 +210,34 @@
             min-height: 20px;
         }
 
+        /* Contenedor donde se muestran los comentarios cargados de Google Sheets */
+        .lista-comentarios {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .tarjeta-comentario {
+            background: rgba(15, 15, 20, 0.5);
+            border: 1px solid rgba(217, 179, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px 20px;
+        }
+
+        .tarjeta-comentario h4 {
+            color: var(--primary-color);
+            margin: 0 0 5px 0;
+            font-size: 16px;
+        }
+
+        .tarjeta-comentario p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
         /* Footer formal y limpio */
         footer {
             margin-top: 40px;
@@ -301,7 +329,7 @@
 
     </div>
 
-    <!-- SECCIÓN DE EXPERIENCIA PSICOLÓGICA CON CAMPO DE NOMBRE -->
+    <!-- SECCIÓN DE EXPERIENCIA PSICOLÓGICA CON CARGA Y ENVÍO A GOOGLE SHEETS -->
     <section class="seccion-experiencia">
         <h3>Mi experiencia psicológica fue:</h3>
         <div class="aviso-respeto">
@@ -318,6 +346,11 @@
             <button type="button" class="btn-enviar" onclick="validarYEnviar()">Enviar Comentario</button>
             <div id="mensaje-alerta"></div>
         </div>
+
+        <!-- LISTADO DE COMENTARIOS RECUPERADOS DE LA HOJA DE CÁLCULO -->
+        <div class="lista-comentarios" id="contenedorComentarios">
+            <p style="color: var(--text-muted); text-align: center; font-size: 14px;">Cargando experiencias...</p>
+        </div>
     </section>
 </main>
 
@@ -329,14 +362,49 @@
 <!-- Botón de WhatsApp -->
 <a href="https://wa.me/5210000000000" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contacto por WhatsApp"></a>
 
-<!-- SCRIPT DE VALIDACIÓN Y ENVÍO A GOOGLE SHEETS -->
+<!-- SCRIPT DE VALIDACIÓN, CARGA Y ENVÍO DE COMENTARIOS -->
 <script>
+    const urlWebScript = "https://script.google.com/macros/s/AKfycbzaU0azd1hy3wF2-9vVIDJNnYBS-pCPQeNkSQW6p7O886XoxEqKmOSEEeTPmQmBmYAGzA/exec";
+
+    // Función para obtener y mostrar los comentarios guardados
+    function cargarComentarios() {
+        const contenedor = document.getElementById('contenedorComentarios');
+        
+        fetch(urlWebScript)
+            .then(response => response.json())
+            .then(data => {
+                contenedor.innerHTML = ""; 
+                
+                if (!data || data.length === 0) {
+                    contenedor.innerHTML = "<p style='color: var(--text-muted); text-align: center; font-size: 14px;'>Sé el primero en compartir tu experiencia.</p>";
+                    return;
+                }
+
+                // Invertir para ver primero los más recientes
+                data.reverse().forEach(item => {
+                    const tarjeta = document.createElement('div');
+                    tarjeta.className = "tarjeta-comentario";
+                    tarjeta.innerHTML = `
+                        <h4>${item.nombre}</h4>
+                        <p>${item.comentario}</p>
+                    `;
+                    contenedor.appendChild(tarjeta);
+                });
+            })
+            .catch(error => {
+                contenedor.innerHTML = "<p style='color: #ff8080; text-align: center; font-size: 14px;'>No se pudieron cargar los comentarios recientes.</p>";
+            });
+    }
+
+    // Ejecutar al abrir la página
+    window.onload = cargarComentarios;
+
+    // Función para validar palabras prohibidas y enviar nuevos comentarios
     function validarYEnviar() {
         const nombre = document.getElementById('nombreUsuario').value.trim();
         const texto = document.getElementById('textoExperiencia').value.trim();
         const alerta = document.getElementById('mensaje-alerta');
         
-        // Lista básica de palabras prohibidas para bloquear groserías automáticamente
         const palabrasProhibidas = ["groseria", "idiota", "estupido", "imbecil", "mierda", "pendejo", "cabron", "puto", "puta"];
         
         let textoCompleto = (nombre + " " + texto).toLowerCase();
@@ -359,9 +427,6 @@
             alerta.style.color = "#d9b3ff";
             alerta.innerText = "⏳ Enviando y guardando experiencia...";
             
-            // Tu nueva URL de Google Apps Script integrada aquí:
-            const urlWebScript = "https://script.google.com/macros/s/AKfycbwVsI7eljKP1NDIW6QiTjwxa91sUfOqykdHKmZmAUBwiu0B8xwwIBH1PnYp62HtkYqDag/exec";
-            
             fetch(urlWebScript, {
                 method: "POST",
                 mode: "no-cors",
@@ -370,13 +435,16 @@
             })
             .then(() => {
                 alerta.style.color = "#80ff80";
-                alerta.innerText = "✅ ¡Gracias por compartir tu experiencia con respeto! Registrada con éxito.";
+                alerta.innerText = "✅ ¡Gracias por compartir tu experiencia! Se ha publicado correctamente.";
                 document.getElementById('nombreUsuario').value = "";
                 document.getElementById('textoExperiencia').value = "";
+                
+                // Actualizar la lista en pantalla después de un momento
+                setTimeout(cargarComentarios, 1500);
             })
             .catch(() => {
                 alerta.style.color = "#ffcc00";
-                alerta.innerText = "⚠️ Tu mensaje fue validado pero hubo un problema de conexión al guardar.";
+                alerta.innerText = "⚠️ Tu mensaje fue enviado pero hubo un problema al actualizar la lista.";
             });
         }
     }
