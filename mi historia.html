@@ -109,9 +109,97 @@
             letter-spacing: 0.3px;
         }
 
+        /* --- SECCIÓN DE COMENTARIOS / EXPERIENCIA PSICOLÓGICA --- */
+        .seccion-experiencia {
+            max-width: 850px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+            text-align: left;
+            width: 90%;
+            box-sizing: border-box;
+        }
+
+        .seccion-experiencia h3 {
+            color: var(--primary-color);
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .aviso-respeto {
+            background: rgba(90, 40, 140, 0.25);
+            border-left: 4px solid var(--primary-color);
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .form-grupo {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .form-grupo textarea {
+            width: 100%;
+            height: 110px;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+            background: rgba(15, 15, 20, 0.6);
+            color: var(--text-main);
+            font-size: 15px;
+            resize: vertical;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        .form-grupo textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .btn-enviar {
+            background: linear-gradient(135deg, #5b2c6f, #7d3c98);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            align-self: flex-end;
+        }
+
+        .btn-enviar:hover {
+            background: rgba(140, 90, 200, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px var(--accent-glow);
+        }
+
+        #mensaje-alerta {
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+            min-height: 20px;
+        }
+
         /* Footer formal y limpio */
         footer {
-            margin-top: 60px;
+            margin-top: 40px;
             background: rgba(10, 8, 15, 0.7);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding: 30px 20px;
@@ -159,6 +247,7 @@
             h1 { font-size: 30px; }
             .subtitle { font-size: 14px; }
             .contenedor-botones { gap: 15px; }
+            .seccion-experiencia { padding: 25px 15px; }
         }
     </style>
 </head>
@@ -170,32 +259,48 @@
     <p class="subtitle">Lic. Elizabeth Calderón</p>
 </header>
 
-<main class="contenedor-botones">
+<main>
+    <div class="contenedor-botones">
 
-    <!-- Botón Mi Historia -->
-    <a href="info historia.html" class="tarjeta-enlace">
-        <img src="imagen.png" class="icono" alt="Mi Historia">
-        <h2 class="titulo-boton">Mi Historia</h2>
-    </a>
+        <!-- Botón Mi Historia -->
+        <a href="info historia.html" class="tarjeta-enlace">
+            <img src="imagen.png" class="icono" alt="Mi Historia">
+            <h2 class="titulo-boton">Mi Historia</h2>
+        </a>
 
-    <!-- Botón Formación -->
-    <a href="diplomas info.html" class="tarjeta-enlace">
-        <img src="img_diploma.jpg" class="icono" alt="Formación">
-        <h2 class="titulo-boton">Formación</h2>
-    </a>
+        <!-- Botón Formación -->
+        <a href="diplomas info.html" class="tarjeta-enlace">
+            <img src="img_diploma.jpg" class="icono" alt="Formación">
+            <h2 class="titulo-boton">Formación</h2>
+        </a>
 
-    <!-- Botón Citas -->
-    <a href="https://www.jotform.com/app/251557164193864" class="tarjeta-enlace" target="_blank" rel="noopener">
-        <img src="Sin título.png" class="icono" alt="Agendar Citas">
-        <h2 class="titulo-boton">Agendar Citas</h2>
-    </a>
+        <!-- Botón Citas -->
+        <a href="https://www.jotform.com/app/251557164193864" class="tarjeta-enlace" target="_blank" rel="noopener">
+            <img src="Sin título.png" class="icono" alt="Agendar Citas">
+            <h2 class="titulo-boton">Agendar Citas</h2>
+        </a>
 
-    <!-- Botón Tips Psicológicos -->
-    <a href="consejos.html" class="tarjeta-enlace">
-        <img src="199d770b-cc34-4f14-b713-ccc55a46ddb1.jpg" class="icono" alt="Tips Psicológicos">
-        <h2 class="titulo-boton">Tips Psicológicos</h2>
-    </a>
+        <!-- Botón Tips Psicológicos -->
+        <a href="consejos.html" class="tarjeta-enlace">
+            <img src="199d770b-cc34-4f14-b713-ccc55a46ddb1.jpg" class="icono" alt="Tips Psicológicos">
+            <h2 class="titulo-boton">Tips Psicológicos</h2>
+        </a>
 
+    </div>
+
+    <!-- SECCIÓN DE EXPERIENCIA PSICOLÓGICA (CONECTADA A GOOGLE SHEETS) -->
+    <section class="seccion-experiencia">
+        <h3>Mi experiencia psicológica fue:</h3>
+        <div class="aviso-respeto">
+            <strong>Mensaje de respeto:</strong> Este espacio está diseñado para construir comunidad y compartir vivencias desde la empatía. Quedan estrictamente prohibidas las ofensas, groserías o expresiones denigrantes; cualquier comentario que vulnere este principio será bloqueado automáticamente.
+        </div>
+        
+        <div class="form-grupo">
+            <textarea id="textoExperiencia" placeholder="Escribe aquí tu testimonio o experiencia..."></textarea>
+            <button type="button" class="btn-enviar" onclick="validarYEnviar()">Enviar Comentario</button>
+            <div id="mensaje-alerta"></div>
+        </div>
+    </section>
 </main>
 
 <footer>
@@ -205,6 +310,57 @@
 
 <!-- Botón de WhatsApp -->
 <a href="https://wa.me/5210000000000" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contacto por WhatsApp"></a>
+
+<!-- SCRIPT DE VALIDACIÓN, FILTRADO DE PALABROTAS Y GOOGLE SHEETS -->
+<script>
+    function validarYEnviar() {
+        const texto = document.getElementById('textoExperiencia').value;
+        const alerta = document.getElementById('mensaje-alerta');
+        
+        // Lista básica de palabras prohibidas para bloquear groserías automáticamente
+        const palabrasProhibidas = ["groseria", "idiota", "estupido", "imbecil", "mierda", "pendejo", "cabron", "puto", "puta"];
+        
+        let textoMinuscula = texto.toLowerCase();
+        let encontrada = false;
+
+        for (let palabra of palabrasProhibidas) {
+            if (textoMinuscula.includes(palabra)) {
+                encontrada = true;
+                break;
+            }
+        }
+
+        if (encontrada) {
+            alerta.style.color = "#ff8080";
+            alerta.innerText = "⚠️ Tu mensaje contiene términos no permitidos por nuestras normas de respeto y no pudo ser publicado.";
+        } else if (texto.trim() === "") {
+            alerta.style.color = "#ffcc00";
+            alerta.innerText = "⚠️ Por favor, escribe un comentario antes de enviar.";
+        } else {
+            alerta.style.color = "#d9b3ff";
+            alerta.innerText = "⏳ Enviando y guardando experiencia...";
+            
+            // Conexión automática con tu Google Sheet usando tu URL de Apps Script
+            const urlWebScript = "https://script.google.com/macros/s/AKfycbxNnDT82yUWJkL2vJIGDz0UY_lOpIBr5iY3XoZ5i76WkYBmGHfkbzSZHFMxTj1rLJQWfA/exec";
+            
+            fetch(urlWebScript, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ comentario: texto })
+            })
+            .then(() => {
+                alerta.style.color = "#80ff80";
+                alerta.innerText = "✅ ¡Gracias por compartir tu experiencia con respeto! Registrada con éxito.";
+                document.getElementById('textoExperiencia').value = "";
+            })
+            .catch(() => {
+                alerta.style.color = "#ffcc00";
+                alerta.innerText = "⚠️ Tu mensaje fue validado pero hubo un problema de conexión al guardar.";
+            });
+        }
+    }
+</script>
 
 </body>
 </html>
