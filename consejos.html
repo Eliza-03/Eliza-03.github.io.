@@ -46,6 +46,22 @@
             text-shadow: 0 2px 15px rgba(217, 179, 255, 0.2);
         }
 
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 50px 0 20px 0;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 10px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
         .subtitle {
             font-size: 16px;
             color: var(--text-muted);
@@ -77,7 +93,7 @@
         /* Contenedor de los 7 espacios (Grid) */
         .contenedor-tips {
             max-width: 1100px;
-            margin: 30px auto;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
@@ -129,20 +145,7 @@
             line-height: 1.5;
             margin: 0 0 20px 0;
             opacity: 0.9;
-        }
-
-        .tip-enlace {
-            align-self: flex-start;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            transition: opacity 0.2s;
-        }
-
-        .tip-enlace:hover {
-            opacity: 0.7;
-            text-decoration: underline;
+            white-space: pre-line;
         }
 
         /* Footer formal y limpio */
@@ -190,9 +193,9 @@
             box-shadow: 0 6px 25px rgba(0, 255, 0, 0.5);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             h1 { font-size: 28px; }
+            .section-title { font-size: 22px; }
             .contenedor-tips { padding: 0 15px; }
         }
     </style>
@@ -200,708 +203,337 @@
 
 <body>
 
-      <!-- titulo-->
 <header>
-    <h1>Tips para parejas</h1>
+    <h1>Centro de Bienestar Psicológico</h1>
+    <p class="subtitle">Herramientas prácticas para tu salud emocional</p>
+    <a href="index.html" class="btn-volver">&larr; Volver al inicio</a>
 </header>
 
-<main class="contenedor-tips">
-
-    <!-- Espacio / Consejo 1 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">01</span>
-            <h2 class="tip-titulo">Empatía y comprensión</h2>
-            <p class="tip-texto">•⁠ ⁠Ponte en el lugar del otro: Valida sus emociones, aunque no las compartas. 
-                                 •⁠ ⁠Reconoce sus esfuerzos: Un simple "Te agradezco por..."
-                                 o "Noté que hiciste..." fortalece la conexión..</p>
-    
-    </article>
-
-    <!-- Espacio / Consejo 2 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">02</span>
-            <h2 class="tip-titulo">Respeto y límites</h2>
-            <p class="tip-texto">•⁠ ⁠Respeta diferencias: No todas las opiniones o estilos de vida deben coincidir con los tuyos. 
-                                •⁠ ⁠Establece límites sanos: Aprende a decir "no" cuando sea necesario, sin culpa.</p>
-        </div>
-    </article>
-
-    <!-- Espacio / Consejo 3 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">03</span>
-            <h2 class="tip-titulo">Tiempo de calidad</h2>
-            <p class="tip-texto">•⁠ ⁠*Dedica momentos significativos*: No se trata de cantidad, sino de presencia (apaga el móvil, planea actividades juntos). 
-                                 •⁠ ⁠*Pequeños detalles*: Un mensaje, un gesto inesperado o un cumplido sincero marcan la diferencia.</p>
-        </div>
-    </article>
-
-    <!-- Espacio / Consejo 4 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">04</span>
-            <h2 class="tip-titulo">Manejo de conflictos</h2>
-            <p class="tip-texto">•⁠ ⁠Evita el resentimiento: Habla a tiempo sobre lo que te molesta, con calma. 
-                                 •⁠ ⁠Busca soluciones, no culpables: Enfócate en resolver el problema, no en "ganar" la discusión. 
-                                  •⁠ ⁠Aprende a perdonar: Guardar rencor daña más la relación que el error en sí..</p>
-        </div>
-       
-    </article>
-
-    <!-- Espacio / Consejo 5 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">05</span>
-            <h2 class="tip-titulo">Crecimiento conjunto</h2>
-            <p class="tip-texto">•⁠ ⁠Apoya sus metas: Celebra sus logros y anímalo en sus proyectos. 
-                                 •⁠ ⁠Aprende juntos: Compartan hobbies, cursos o nuevas experiencias..</p>
-        </div>
-    </article>
-
-    <!-- Espacio / Consejo 6 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero"> 06</span>
-            <h2 class="tip-titulo">Autocuidado</h2>
-            <p class="tip-texto">Una relación sana empieza por ti: Si estás bien emocionalmente, podrás dar lo mejor a los demás. .</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 7 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">mas tips</span>
-            <h2 class="tip-titulo">Relaciones de pareja</h2>
-            <p class="tip-texto"> Los conflictos son inevitables, pero su manejo define la salud de la relación. Usa Declaraciones con Yo (Yo Siento...)
-                En lugar de atacar ("Tú siempre llegas tarde"), expresa tu sentimiento y la necesidad ("Yo me siento frustrado cuando llegas tarde, porque valoro el tiempo que pasamos juntos"). Esto reduce la defensividad.
-                Haz Pausas Activas: Si la discusión se calienta, propongan una pausa de 20-30 minutos. Aclaren que no es un abandono, sino un tiempo para calmarse y volver a hablar con más tranquilidad.
-                Escucha Activa: Cuando tu pareja hable, no prepares tu respuesta. Solo escucha. Luego, repite con tus propias palabras lo que entendiste: "Por lo que entiendo, te sentiste herido porque no te consulté, ¿es así?".
-                Enfócate en el Problema, No en la Persona: El enemigo es el problema, no tu pareja. Trabajen como un equipo para resolverlo. "¿Cómo podemos solucionar esto juntos?"..</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-    
-    <header>
-    <h1>Sexualidad</h1>
-</header>
-
-<main class="contenedor-tips">
-
-    <!-- Espacio / Consejo 1 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">1</span>
-            <h2 class="tip-titulo">Conexión emocional</h2>
-            <p class="tip-texto">•⁠ ⁠Ponte en el lugar del otro: Valida sus emociones, aunque no las compartas. 
-                                 •⁠ ⁠Reconoce sus esfuerzos: Un simple "Te agradezco por..."
-                                 o "Noté que hiciste..." fortalece la conexión..</p>
-    
-    </article>
-
-    <!-- Espacio / Consejo 2 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 02</span>
-            <h2 class="tip-titulo">Comunicación abierta y sin tabúes*</h2>
-            <p class="tip-texto">•⁠ ⁠Intimidad fuera de la cama: Abrazos, conversaciones profundas y complicidad fortalecen el deseo. 
-                                  •⁠ ⁠Mirada y contacto: El erotismo comienza con detalles pequeños (un roce, un susurro).</p>
-        </div>
-    
-    </article>
-
-    <!-- Espacio / Consejo 3 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero"> 3</span>
-            <h2 class="tip-titulo"> Exploración y variedad</h2>
-            <p class="tip-texto">•⁠ ⁠Descubre tu cuerpo: La autoexploración ayuda a conocer lo que te gusta. 
-                                 •⁠ ⁠Prueben cosas nuevas: Juegos de roles, masajes eróticos, juguetes sexuales (si ambos están de acuerdo), cambiar lugares o posiciones. 
-                                 •⁠ ⁠*Ritmo diferente*: Alterna entre sexo lento/pasional y rápido/intenso. .</p>
-        </div>
-       
-    </article>
-
-    <!-- Espacio / Consejo 4 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 04</span>
-            <h2 class="tip-titulo">Autocompasión y Culpa</h2>
-            <p class="tip-texto">Estrategias para gestionar el diálogo interno negativo y fomentar una relación más amable con uno mismo.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 5 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 05</span>
-            <h2 class="tip-titulo">Manejo de la Frustración</h2>
-            <p class="tip-texto">Claves psicológicas para afrontar los imprevistos diarios y desarrollar mayor flexibilidad mental ante los cambios.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 6 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 06</span>
-            <h2 class="tip-titulo">Atención Plena (Mindfulness)</h2>
-            <p class="tip-texto">Ejercicios prácticos y sencillos para mantener el anclaje en el momento presente y reducir la rumiación mental.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 7 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 07</span>
-            <h2 class="tip-titulo">Autocuidado Emocional</h2>
-            <p class="tip-texto">Reflexión final sobre la importancia de priorizar la salud mental como un pilar fundamental del desarrollo personal.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-<header>
-    <h1>Tips para parejas</h1>
-</header>
-
-<main class="contenedor-tips">
-
-    <!-- Espacio / Consejo 1 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Empatía y comprensión</span>
-            <h2 class="tip-titulo">Gestión de la Ansiedad</h2>
-            <p class="tip-texto">•⁠ ⁠Ponte en el lugar del otro: Valida sus emociones, aunque no las compartas. 
-                                 •⁠ ⁠Reconoce sus esfuerzos: Un simple "Te agradezco por..."
-                                 o "Noté que hiciste..." fortalece la conexión..</p>
-    
-    </article>
-
-    <!-- Espacio / Consejo 2 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 02</span>
-            <h2 class="tip-titulo">Higiene del Sueño</h2>
-            <p class="tip-texto">Recomendaciones orientadas a mejorar la calidad del descanso nocturno y la desconexión mental antes de dormir.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 3 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 03</span>
-            <h2 class="tip-titulo">Establecer Límites Sanos</h2>
-            <p class="tip-texto">Pautas y reflexiones sobre la importancia de la asertividad y el cuidado de los espacios personales en las relaciones.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 4 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 04</span>
-            <h2 class="tip-titulo">Autocompasión y Culpa</h2>
-            <p class="tip-texto">Estrategias para gestionar el diálogo interno negativo y fomentar una relación más amable con uno mismo.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 5 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 05</span>
-            <h2 class="tip-titulo">Manejo de la Frustración</h2>
-            <p class="tip-texto">Claves psicológicas para afrontar los imprevistos diarios y desarrollar mayor flexibilidad mental ante los cambios.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 6 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 06</span>
-            <h2 class="tip-titulo">Atención Plena (Mindfulness)</h2>
-            <p class="tip-texto">Ejercicios prácticos y sencillos para mantener el anclaje en el momento presente y reducir la rumiación mental.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 7 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 07</span>
-            <h2 class="tip-titulo">Autocuidado Emocional</h2>
-            <p class="tip-texto">Reflexión final sobre la importancia de priorizar la salud mental como un pilar fundamental del desarrollo personal.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <header>
-    <h1>Tips para parejas</h1>
-</header>
-
-<main class="contenedor-tips">
-
-    <!-- Espacio / Consejo 1 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Empatía y comprensión</span>
-            <h2 class="tip-titulo">Gestión de la Ansiedad</h2>
-            <p class="tip-texto">•⁠ ⁠Ponte en el lugar del otro: Valida sus emociones, aunque no las compartas. 
-                                 •⁠ ⁠Reconoce sus esfuerzos: Un simple "Te agradezco por..."
-                                 o "Noté que hiciste..." fortalece la conexión..</p>
-    
-    </article>
-
-    <!-- Espacio / Consejo 2 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 02</span>
-            <h2 class="tip-titulo">Higiene del Sueño</h2>
-            <p class="tip-texto">Recomendaciones orientadas a mejorar la calidad del descanso nocturno y la desconexión mental antes de dormir.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 3 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 03</span>
-            <h2 class="tip-titulo">Establecer Límites Sanos</h2>
-            <p class="tip-texto">Pautas y reflexiones sobre la importancia de la asertividad y el cuidado de los espacios personales en las relaciones.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 4 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 04</span>
-            <h2 class="tip-titulo">Autocompasión y Culpa</h2>
-            <p class="tip-texto">Estrategias para gestionar el diálogo interno negativo y fomentar una relación más amable con uno mismo.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 5 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 05</span>
-            <h2 class="tip-titulo">Manejo de la Frustración</h2>
-            <p class="tip-texto">Claves psicológicas para afrontar los imprevistos diarios y desarrollar mayor flexibilidad mental ante los cambios.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 6 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 06</span>
-            <h2 class="tip-titulo">Atención Plena (Mindfulness)</h2>
-            <p class="tip-texto">Ejercicios prácticos y sencillos para mantener el anclaje en el momento presente y reducir la rumiación mental.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 7 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 07</span>
-            <h2 class="tip-titulo">Autocuidado Emocional</h2>
-            <p class="tip-texto">Reflexión final sobre la importancia de priorizar la salud mental como un pilar fundamental del desarrollo personal.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <header>
-    <h1>Tips para parejas</h1>
-</header>
-
-<main class="contenedor-tips">
-
-    <!-- Espacio / Consejo 1 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Empatía y comprensión</span>
-            <h2 class="tip-titulo">Gestión de la Ansiedad</h2>
-            <p class="tip-texto">•⁠ ⁠Ponte en el lugar del otro: Valida sus emociones, aunque no las compartas. 
-                                 •⁠ ⁠Reconoce sus esfuerzos: Un simple "Te agradezco por..."
-                                 o "Noté que hiciste..." fortalece la conexión..</p>
-    
-    </article>
-
-    <!-- Espacio / Consejo 2 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 02</span>
-            <h2 class="tip-titulo">Higiene del Sueño</h2>
-            <p class="tip-texto">Recomendaciones orientadas a mejorar la calidad del descanso nocturno y la desconexión mental antes de dormir.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 3 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 03</span>
-            <h2 class="tip-titulo">Establecer Límites Sanos</h2>
-            <p class="tip-texto">Pautas y reflexiones sobre la importancia de la asertividad y el cuidado de los espacios personales en las relaciones.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 4 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 04</span>
-            <h2 class="tip-titulo">Autocompasión y Culpa</h2>
-            <p class="tip-texto">Estrategias para gestionar el diálogo interno negativo y fomentar una relación más amable con uno mismo.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 5 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 05</span>
-            <h2 class="tip-titulo">Manejo de la Frustración</h2>
-            <p class="tip-texto">Claves psicológicas para afrontar los imprevistos diarios y desarrollar mayor flexibilidad mental ante los cambios.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 6 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 06</span>
-            <h2 class="tip-titulo">Atención Plena (Mindfulness)</h2>
-            <p class="tip-texto">Ejercicios prácticos y sencillos para mantener el anclaje en el momento presente y reducir la rumiación mental.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 7 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 07</span>
-            <h2 class="tip-titulo">Autocuidado Emocional</h2>
-            <p class="tip-texto">Reflexión final sobre la importancia de priorizar la salud mental como un pilar fundamental del desarrollo personal.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <header>
-    <h1>Tips para parejas</h1>
-</header>
-
-<main class="contenedor-tips">
-
-    <!-- Espacio / Consejo 1 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Empatía y comprensión</span>
-            <h2 class="tip-titulo">Gestión de la Ansiedad</h2>
-            <p class="tip-texto">•⁠ ⁠Ponte en el lugar del otro: Valida sus emociones, aunque no las compartas. 
-                                 •⁠ ⁠Reconoce sus esfuerzos: Un simple "Te agradezco por..."
-                                 o "Noté que hiciste..." fortalece la conexión..</p>
-    
-    </article>
-
-    <!-- Espacio / Consejo 2 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 02</span>
-            <h2 class="tip-titulo">Higiene del Sueño</h2>
-            <p class="tip-texto">Recomendaciones orientadas a mejorar la calidad del descanso nocturno y la desconexión mental antes de dormir.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 3 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 03</span>
-            <h2 class="tip-titulo">Establecer Límites Sanos</h2>
-            <p class="tip-texto">Pautas y reflexiones sobre la importancia de la asertividad y el cuidado de los espacios personales en las relaciones.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 4 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 04</span>
-            <h2 class="tip-titulo">Autocompasión y Culpa</h2>
-            <p class="tip-texto">Estrategias para gestionar el diálogo interno negativo y fomentar una relación más amable con uno mismo.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 5 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 05</span>
-            <h2 class="tip-titulo">Manejo de la Frustración</h2>
-            <p class="tip-texto">Claves psicológicas para afrontar los imprevistos diarios y desarrollar mayor flexibilidad mental ante los cambios.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 6 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 06</span>
-            <h2 class="tip-titulo">Atención Plena (Mindfulness)</h2>
-            <p class="tip-texto">Ejercicios prácticos y sencillos para mantener el anclaje en el momento presente y reducir la rumiación mental.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 7 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 07</span>
-            <h2 class="tip-titulo">Autocuidado Emocional</h2>
-            <p class="tip-texto">Reflexión final sobre la importancia de priorizar la salud mental como un pilar fundamental del desarrollo personal.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <header>
-    <h1>Tips para parejas</h1>
-</header>
-
-<main class="contenedor-tips">
-
-    <!-- Espacio / Consejo 1 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Empatía y comprensión</span>
-            <h2 class="tip-titulo">Gestión de la Ansiedad</h2>
-            <p class="tip-texto">•⁠ ⁠Ponte en el lugar del otro: Valida sus emociones, aunque no las compartas. 
-                                 •⁠ ⁠Reconoce sus esfuerzos: Un simple "Te agradezco por..."
-                                 o "Noté que hiciste..." fortalece la conexión..</p>
-    
-    </article>
-
-    <!-- Espacio / Consejo 2 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 02</span>
-            <h2 class="tip-titulo">Higiene del Sueño</h2>
-            <p class="tip-texto">Recomendaciones orientadas a mejorar la calidad del descanso nocturno y la desconexión mental antes de dormir.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 3 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 03</span>
-            <h2 class="tip-titulo">Establecer Límites Sanos</h2>
-            <p class="tip-texto">Pautas y reflexiones sobre la importancia de la asertividad y el cuidado de los espacios personales en las relaciones.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 4 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 04</span>
-            <h2 class="tip-titulo">Autocompasión y Culpa</h2>
-            <p class="tip-texto">Estrategias para gestionar el diálogo interno negativo y fomentar una relación más amable con uno mismo.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 5 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 05</span>
-            <h2 class="tip-titulo">Manejo de la Frustración</h2>
-            <p class="tip-texto">Claves psicológicas para afrontar los imprevistos diarios y desarrollar mayor flexibilidad mental ante los cambios.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 6 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 06</span>
-            <h2 class="tip-titulo">Atención Plena (Mindfulness)</h2>
-            <p class="tip-texto">Ejercicios prácticos y sencillos para mantener el anclaje en el momento presente y reducir la rumiación mental.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 7 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 07</span>
-            <h2 class="tip-titulo">Autocuidado Emocional</h2>
-            <p class="tip-texto">Reflexión final sobre la importancia de priorizar la salud mental como un pilar fundamental del desarrollo personal.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <header>
-    <h1>Tips para parejas</h1>
-</header>
-
-<main class="contenedor-tips">
-
-    <!-- Espacio / Consejo 1 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Empatía y comprensión</span>
-            <h2 class="tip-titulo">Gestión de la Ansiedad</h2>
-            <p class="tip-texto">•⁠ ⁠Ponte en el lugar del otro: Valida sus emociones, aunque no las compartas. 
-                                 •⁠ ⁠Reconoce sus esfuerzos: Un simple "Te agradezco por..."
-                                 o "Noté que hiciste..." fortalece la conexión..</p>
-    
-    </article>
-
-    <!-- Espacio / Consejo 2 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 02</span>
-            <h2 class="tip-titulo">Higiene del Sueño</h2>
-            <p class="tip-texto">Recomendaciones orientadas a mejorar la calidad del descanso nocturno y la desconexión mental antes de dormir.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 3 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 03</span>
-            <h2 class="tip-titulo">Establecer Límites Sanos</h2>
-            <p class="tip-texto">Pautas y reflexiones sobre la importancia de la asertividad y el cuidado de los espacios personales en las relaciones.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 4 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 04</span>
-            <h2 class="tip-titulo">Autocompasión y Culpa</h2>
-            <p class="tip-texto">Estrategias para gestionar el diálogo interno negativo y fomentar una relación más amable con uno mismo.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 5 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 05</span>
-            <h2 class="tip-titulo">Manejo de la Frustración</h2>
-            <p class="tip-texto">Claves psicológicas para afrontar los imprevistos diarios y desarrollar mayor flexibilidad mental ante los cambios.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 6 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 06</span>
-            <h2 class="tip-titulo">Atención Plena (Mindfulness)</h2>
-            <p class="tip-texto">Ejercicios prácticos y sencillos para mantener el anclaje en el momento presente y reducir la rumiación mental.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 7 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 07</span>
-            <h2 class="tip-titulo">Autocuidado Emocional</h2>
-            <p class="tip-texto">Reflexión final sobre la importancia de priorizar la salud mental como un pilar fundamental del desarrollo personal.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <header>
-    <h1>Tips para parejas</h1>
-</header>
-
-<main class="contenedor-tips">
-
-    <!-- Espacio / Consejo 1 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Empatía y comprensión</span>
-            <h2 class="tip-titulo">Gestión de la Ansiedad</h2>
-            <p class="tip-texto">•⁠ ⁠Ponte en el lugar del otro: Valida sus emociones, aunque no las compartas. 
-                                 •⁠ ⁠Reconoce sus esfuerzos: Un simple "Te agradezco por..."
-                                 o "Noté que hiciste..." fortalece la conexión..</p>
-    
-    </article>
-
-    <!-- Espacio / Consejo 2 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 02</span>
-            <h2 class="tip-titulo">Higiene del Sueño</h2>
-            <p class="tip-texto">Recomendaciones orientadas a mejorar la calidad del descanso nocturno y la desconexión mental antes de dormir.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 3 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 03</span>
-            <h2 class="tip-titulo">Establecer Límites Sanos</h2>
-            <p class="tip-texto">Pautas y reflexiones sobre la importancia de la asertividad y el cuidado de los espacios personales en las relaciones.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 4 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 04</span>
-            <h2 class="tip-titulo">Autocompasión y Culpa</h2>
-            <p class="tip-texto">Estrategias para gestionar el diálogo interno negativo y fomentar una relación más amable con uno mismo.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 5 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 05</span>
-            <h2 class="tip-titulo">Manejo de la Frustración</h2>
-            <p class="tip-texto">Claves psicológicas para afrontar los imprevistos diarios y desarrollar mayor flexibilidad mental ante los cambios.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 6 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 06</span>
-            <h2 class="tip-titulo">Atención Plena (Mindfulness)</h2>
-            <p class="tip-texto">Ejercicios prácticos y sencillos para mantener el anclaje en el momento presente y reducir la rumiación mental.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
-    <!-- Espacio / Consejo 7 -->
-    <article class="tarjeta-tip">
-        <div>
-            <span class="tip-numero">Espacio 07</span>
-            <h2 class="tip-titulo">Autocuidado Emocional</h2>
-            <p class="tip-texto">Reflexión final sobre la importancia de priorizar la salud mental como un pilar fundamental del desarrollo personal.</p>
-        </div>
-        <a href="#" class="tip-enlace">Leer más &rarr;</a>
-    </article>
-
+<main>
+
+    <!-- BLOQUE 1: TIPS PARA PAREJAS -->
+    <h2 class="section-title">Tips para parejas</h2>
+    <div class="contenedor-tips">
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">01</span>
+                <h3 class="tip-titulo">Empatía y comprensión</h3>
+                <p class="tip-texto">• Ponte en el lugar del otro: Valida sus emociones, aunque no las compartas. 
+• Reconoce sus esfuerzos: Un simple "Te agradezco por..." o "Noté que hiciste..." fortalece la conexión.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">02</span>
+                <h3 class="tip-titulo">Respeto y límites</h3>
+                <p class="tip-texto">• Respeta diferencias: No todas las opiniones o estilos de vida deben coincidir con los tuyos. 
+• Establece límites sanos: Aprende a decir "no" cuando sea necesario, sin culpa.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">03</span>
+                <h3 class="tip-titulo">Tiempo de calidad</h3>
+                <p class="tip-texto">• Dedica momentos significativos: No se trata de cantidad, sino de presencia (apaga el móvil, planea actividades juntos). 
+• Pequeños detalles: Un mensaje, un gesto inesperado o un cumplido sincero marcan la diferencia.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">04</span>
+                <h3 class="tip-titulo">Manejo de conflictos</h3>
+                <p class="tip-texto">• Evita el resentimiento: Habla a tiempo sobre lo que te molesta, con calma. 
+• Busca soluciones, no culpables: Enfócate en resolver el problema, no en "ganar" la discusión. 
+• Aprende a perdonar: Guardar rencor daña más la relación que el error en sí.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">05</span>
+                <h3 class="tip-titulo">Crecimiento conjunto</h3>
+                <p class="tip-texto">• Apoya sus metas: Celebra sus logros y anímalo en sus proyectos. 
+• Aprende juntos: Compartan hobbies, cursos o nuevas experiencias.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">06</span>
+                <h3 class="tip-titulo">Autocuidado en pareja</h3>
+                <p class="tip-texto">Una relación sana empieza por ti: Si estás bien emocionalmente, podrás dar lo mejor a los demás y construir un vínculo más fuerte y equilibrado.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">07</span>
+                <h3 class="tip-titulo">Comunicación Asertiva</h3>
+                <p class="tip-texto">Los conflictos son inevitables, pero su manejo define la salud de la relación. Usa Declaraciones con "Yo" (ej. "Yo me siento frustrado cuando...") para reducir la defensividad y resolver problemas en equipo.</p>
+            </div>
+        </article>
+    </div>
+
+
+    <!-- BLOQUE 2: SEXUALIDAD -->
+    <h2 class="section-title">Sexualidad</h2>
+    <div class="contenedor-tips">
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">01</span>
+                <h3 class="tip-titulo">Conexión emocional</h3>
+                <p class="tip-texto">• Intimidad fuera de la cama: Abrazos, conversaciones profundas y complicidad fortalecen el deseo cotidiano. 
+• Mirada y contacto: El erotismo comienza con pequeños detalles y atención plena.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">02</span>
+                <h3 class="tip-titulo">Comunicación abierta</h3>
+                <p class="tip-texto">• Habla con honestidad: Expresa tus deseos, fantasías y límites sin miedo al juicio. 
+• Feedback positivo: Comenten qué disfrutaron y qué podrían mejorar mediante acuerdos constructivos.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">03</span>
+                <h3 class="tip-titulo">Exploración y variedad</h3>
+                <p class="tip-texto">• Descubre tu cuerpo: La autoexploración ayuda a conocer qué te gusta. 
+• Prueben cosas nuevas: Juegos de roles, masajes eróticos, variar lugares o posiciones y alternar ritmos.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">04</span>
+                <h3 class="tip-titulo">Prioriza el placer</h3>
+                <p class="tip-texto">• Disfruten el proceso: El sexo no es una carrera; valoren las caricias, los besos y la anticipación. 
+• Estimulación integral: El cuello, las orejas o la espalda también son zonas sumamente sensibles.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">05</span>
+                <h3 class="tip-titulo">Salud física y mental</h3>
+                <p class="tip-texto">• Cuida tu cuerpo: Ejercicio, alimentación balanceada y descanso mejoran la energía. 
+• Manejo del estrés: La ansiedad y el cansancio afectan el deseo; practiquen técnicas de relajación juntos.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">06</span>
+                <h3 class="tip-titulo">Seguridad y consentimiento</h3>
+                <p class="tip-texto">• Siempre "sí es sí": El consentimiento debe ser entusiasta y mutuo en cada etapa. 
+• Protección: Usen métodos adecuados de anticoncepción y prevención según sus necesidades.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">07</span>
+                <h3 class="tip-titulo">Rompe mitos y rutinas</h3>
+                <p class="tip-texto">• Eviten la rutina: Planifiquen citas íntimas y reconecten con lo que los atrajo al principio. 
+• Cero comparaciones: Ni con la ficción ni con el pasado; cada vínculo es único.</p>
+            </div>
+        </article>
+    </div>
+
+
+    <!-- BLOQUE 3: MANEJO DEL ESTRÉS -->
+    <h2 class="section-title">Manejo del Estrés</h2>
+    <div class="contenedor-tips">
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">01</span>
+                <h3 class="tip-titulo">Identifica la fuente</h3>
+                <p class="tip-texto">• Lleva un registro para reconocer qué situaciones o pensamientos desencadenan el malestar. 
+• Clasifícalo: ¿Puedes controlarlo? (actúa) / ¿No depende de ti? (practica la aceptación).</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">02</span>
+                <h3 class="tip-titulo">Relajación inmediata</h3>
+                <p class="tip-texto">• Respiración 4-7-8: Inspira 4 segundos, aguanta 7, exhala lentamente en 8. 
+• Relajación muscular: Tensa y relaja cada grupo de músculos desde los pies hasta la cabeza.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">03</span>
+                <h3 class="tip-titulo">Hábitos antiestrés diarios</h3>
+                <p class="tip-texto">• Movimiento físico: Camina 20 minutos o baila para liberar endorfinas de forma natural. 
+• Higiene del sueño: Establece una rutina nocturna libre de pantallas una hora antes de dormir.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">04</span>
+                <h3 class="tip-titulo">Conexión social y natural</h3>
+                <p class="tip-texto">• Habla con alguien de confianza para aligerar la carga emocional. 
+• Contacto verde: Pasar tiempo en parques o jardines ayuda a disminuir visiblemente los niveles de cortisol.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">05</span>
+                <h3 class="tip-titulo">Pequeños escapes</h3>
+                <p class="tip-texto">• Arte-terapia: Dibuja, colorea mandalas o escribe libremente lo que sientes. 
+• Aromaterapia: Utiliza esencias de lavanda, bergamota o eucalipto en espacios tranquilos.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">06</span>
+                <h3 class="tip-titulo">Cambia tu perspectiva</h3>
+                <p class="tip-texto">• "Esto también pasará": Recuerda que el estrés agudo es temporal. 
+• Gratitud diaria: Anota 3 cosas positivas al final del día para reenfocar tu atención mental.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">07</span>
+                <h3 class="tip-titulo">Divide y vencerás</h3>
+                <p class="tip-texto">• Si una tarea o problema te abruma, divídela en pasos tan pequeños que sean imposibles de rechazar. 
+• Aprende a decir "no" y a delegar compromisos innecesarios.</p>
+            </div>
+        </article>
+    </div>
+
+
+    <!-- BLOQUE 4: ANSIEDAD Y ATAQUES DE PÁNICO -->
+    <h2 class="section-title">Ansiedad y Pánico</h2>
+    <div class="contenedor-tips">
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">01</span>
+                <h3 class="tip-titulo">Técnica de Grounding (5-4-3-2-1)</h3>
+                <p class="tip-texto">Cuando sientas que la ansiedad sube, conecta con el presente identificando: 5 cosas que veas, 4 que toques, 3 que oigas, 2 que huelas y 1 que saborees.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">02</span>
+                <h3 class="tip-titulo">Respiración Diafragmática</h3>
+                <p class="tip-texto">Coloca una mano en tu pecho y otra en tu estómago. Inhala lentamente por la nariz expandiendo el abdomen y exhala con calma por la boca (repite 10 veces).</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">03</span>
+                <h3 class="tip-titulo">Desafía el escenario</h3>
+                <p class="tip-texto">Pregúntate: "¿Qué es lo peor que podría pasar?". Al definir el peor escenario de forma realista, evalúas su probabilidad y recuperas sensación de control.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">04</span>
+                <h3 class="tip-titulo">Tiempo de preocupación</h3>
+                <p class="tip-texto">Programa 15 minutos al día para preocuparte y anotar pendientes. Fuera de ese lapso, si llega un pensamiento ansioso, recuérdate: "Ya lo veré a su hora".</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">05</span>
+                <h3 class="tip-titulo">Activación Conductual</h3>
+                <p class="tip-texto">La motivación sigue a la acción. Si la depresión o la apatía roban tu energía, comprométete a realizar una micro-meta diaria, como lavar un solo plato.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">06</span>
+                <h3 class="tip-titulo">Autocompasión consciente</h3>
+                <p class="tip-texto">Desafía los pensamientos autocríticos: cuando te digas "soy un fracaso", pregúntate si le dirías eso mismo a un amigo querido en su misma situación.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">07</span>
+                <h3 class="tip-titulo">Apoyo profesional</h3>
+                <p class="tip-texto">Estas herramientas actúan como un botiquín de primeros auxilios. Si los síntomas persisten e interfieren con tu vida, acudir a terapia es el paso más valiente.</p>
+            </div>
+        </article>
+    </div>
+
+
+    <!-- BLOQUE 5: AUTOESTIMA Y PROCRASTINACIÓN -->
+    <h2 class="section-title">Autoestima y Procrastinación</h2>
+    <div class="contenedor-tips">
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">01</span>
+                <h3 class="tip-titulo">Lista de logros personales</h3>
+                <p class="tip-texto">Escribe todo lo que has conseguido a lo largo de tu vida, por pequeño que parezca. Léela cada vez que experimentes sensación de insuficiencia.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">02</span>
+                <h3 class="tip-titulo">Cambia el "debo" por "elijo"</h3>
+                <p class="tip-texto">Sustituye el lenguaje del deber que genera culpa por opciones conscientes: en lugar de "debo hacer ejercicio", di "elijo cuidar mi salud hoy".</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">03</span>
+                <h3 class="tip-titulo">Autocuidado básico</h3>
+                <p class="tip-texto">Ducharte, arreglarte o nutrir tu cuerpo son actos tangibles de respeto propio que refuerzan el mensaje interno de que mereces bienestar.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">04</span>
+                <h3 class="tip-titulo">Reduce la comparación</h3>
+                <p class="tip-texto">Recuerda que en redes sociales solo se proyecta el punto culminante de los demás, no su realidad completa. Limita el tiempo de exposición digital.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">05</span>
+                <h3 class="tip-titulo">La regla de los 2 minutos</h3>
+                <p class="tip-texto">Si una tarea pendiente toma menos de 2 minutos, hazla al instante. Si es compleja, comprométete a trabajar en ella solo durante ese breve lapso para arrancar.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">06</span>
+                <h3 class="tip-titulo">Enfoque en el proceso</h3>
+                <p class="tip-texto">No pienses en el resultado abrumador final; concéntrate únicamente en avanzar paso a paso durante los próximos 25 minutos de trabajo continuo.</p>
+            </div>
+        </article>
+
+        <article class="tarjeta-tip">
+            <div>
+                <span class="tip-numero">07</span>
+                <h3 class="tip-titulo">Visualiza el alivio</h3>
+                <p class="tip-texto">En lugar de enfocar tu mente en lo tedioso de la tarea, visualiza la profunda sensación de libertad y orgullo que experimentarás al terminarla.</p>
+            </div>
+        </article>
+    </div>
 
 </main>
 
