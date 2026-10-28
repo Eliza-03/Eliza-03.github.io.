@@ -198,7 +198,7 @@
 
         #mensaje-alerta {
             margin-top: 12px;
-            font-size: 0.95px;
+            font-size: 0.95rem;
             font-weight: 500;
             text-align: center;
         }
@@ -280,7 +280,6 @@
     </div>
 
     <div class="card">
-        <armando.png src="armando.png" class="icono" style="display:none">
         <img src="armando.png" class="icono">
         <a href="https://www.armandoquirozadame.com/libros/" class="enlace-boton">Venta de Libros</a>
     </div>
@@ -294,7 +293,7 @@
 
 </section>
 
-<!-- SECCIÓN DE EXPERIENCIA PSICOLÓGICA CON FILTRO DE PALABROTAS -->
+<!-- SECCIÓN DE EXPERIENCIA PSICOLÓGICA CON FILTRO DE PALABROTAS Y GOOGLE SHEETS -->
 <section class="seccion-experiencia">
     <h3>Mi experiencia psicológica fue:</h3>
     <div class="aviso-respeto">
@@ -316,13 +315,13 @@
     © Página creada por Blackmoon Systems 2024 - 2026
 </footer>
 
-<!-- SCRIPT PARA BLOQUEAR PALABROTAS -->
+<!-- SCRIPT DE FILTRADO Y CONEXIÓN CON GOOGLE SHEETS -->
 <script>
     function validarYEnviar() {
         const texto = document.getElementById('textoExperiencia').value;
         const alerta = document.getElementById('mensaje-alerta');
         
-        // Lista básica de palabras prohibidas/groserías (puedes ampliarla según necesites)
+        // Lista básica de palabras prohibidas que se bloquean automáticamente
         const palabrasProhibidas = ["palabrota1", "groseria", "idiota", "estupido", "imbecil", "mierda", "pendejo", "cabron", "puto", "puta"];
         
         let textoMinuscula = texto.toLowerCase();
@@ -343,9 +342,26 @@
             alerta.innerText = "⚠️ Por favor, escribe un comentario antes de enviar.";
         } else {
             alerta.style.color = "#80ff80";
-            alerta.innerText = "✅ ¡Gracias por compartir tu experiencia con respeto! (Conectado a Google Sheets)";
-            document.getElementById('textoExperiencia').value = "";
-            // Aquí puedes integrar la API de Google Apps Script para guardar en Google Sheets si lo deseas.
+            alerta.innerText = "⏳ Enviando y guardando experiencia...";
+            
+            // Envío automático de datos a tu Google Sheet mediante la API Web de Apps Script
+            const urlWebScript = "https://script.google.com/macros/s/AKfycbxNnDT82yUWJkL2vJIGDz0UY_lOpIBr5iY3XoZ5i76WkYBmGHfkbzSZHFMxTj1rLJQWfA/exec";
+            
+            fetch(urlWebScript, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ comentario: texto })
+            })
+            .then(() => {
+                alerta.style.color = "#80ff80";
+                alerta.innerText = "✅ ¡Gracias por compartir tu experiencia con respeto! Registrada con éxito.";
+                document.getElementById('textoExperiencia').value = "";
+            })
+            .catch(() => {
+                alerta.style.color = "#ffcc00";
+                alerta.innerText = "⚠️ Tu mensaje fue validado pero hubo un problema de conexión al guardar.";
+            });
         }
     }
 </script>
